@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio profesional interactivo de Ramón A. Curbalán: Human · Systems · Performance." />
+  <title>Ramón A. Curbalán | Human · Systems · Performance</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Inicio">
+      <span class="brand-mark">RC</span>
+      <span class="brand-copy"><strong>RAMÓN A. CURBALÁN</strong><small>HUMAN · SYSTEMS · PERFORMANCE</small></span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#vision">Visión</a>
+      <a href="#areas">Áreas</a>
+      <a href="#metodologia">Metodología</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </header>
+
+  <main id="inicio" class="shell">
+    <section class="intro card" id="vision">
+      <div>
+        <p class="eyebrow">PERFIL MULTIDISCIPLINAR</p>
+        <h1>Ramón A. Curbalán</h1>
+        <p class="lede">Personas · Procesos · Tecnología · Rendimiento</p>
+      </div>
+      <div class="intro-actions">
+        <button class="btn gold" data-open="profile">Ver perfil</button>
+        <a class="btn" href="#contacto">Contacto</a>
+      </div>
+      <p class="manifesto">Conecto personas, sistemas y rendimiento para transformar operaciones complejas en experiencias, soluciones y entornos más eficientes, medibles y sostenibles.</p>
+    </section>
+
+    <section class="cluster" id="areas" aria-label="Cluster profesional interactivo">
+      <div class="connector connector-h"></div>
+      <div class="connector connector-v"></div>
+
+      <button class="node node-hospitality" data-area="hospitality" aria-label="Abrir Hostelería">
+        <span class="node-icon">◎</span>
+        <span class="node-title">HOSTELERÍA</span>
+        <span class="node-sub">Operaciones · Eventos · F&B</span>
+      </button>
+
+      <button class="node node-tech" data-area="tech" aria-label="Abrir Tecnología">
+        <span class="node-icon">⌘</span>
+        <span class="node-title">TECNOLOGÍA</span>
+        <span class="node-sub">Sistemas · Desarrollo · IA</span>
+      </button>
+
+      <button class="node node-sport" data-area="sport" aria-label="Abrir Deporte">
+        <span class="node-icon">↗</span>
+        <span class="node-title">DEPORTE</span>
+        <span class="node-sub">Entrenamiento · Nutrición · Coaching</span>
+      </button>
+
+      <button class="hub" data-open="connection" aria-label="Abrir conexión profesional">
+        <span class="hub-orbit orbit-a"></span>
+        <span class="hub-orbit orbit-b"></span>
+        <span class="hub-core">HUMAN<br>· SYSTEMS ·<br>PERFORMANCE</span>
+        <small>Hostelería · Tecnología · Rendimiento</small>
+      </button>
+    </section>
+
+    <section class="area-panels" aria-live="polite">
+      <article class="area-panel hospitality active" data-panel="hospitality">
+        <p class="eyebrow">01 · HOSPITALITY</p>
+        <h2>Operaciones y experiencia</h2>
+        <p>Dirección de banquetes y eventos, F&B, logística, equipos, servicio, experiencia del cliente, costes y KPI.</p>
+        <div class="chips"><span>Operaciones</span><span>Eventos</span><span>F&B</span><span>Experiencia cliente</span></div>
+      </article>
+      <article class="area-panel tech" data-panel="tech">
+        <p class="eyebrow">02 · TECHNOLOGY</p>
+        <h2>Sistemas y transformación digital</h2>
+        <p>Redes, desarrollo web, Python, Linux, bases de datos, ciberseguridad, IA, automatización y digitalización.</p>
+        <div class="chips"><span>Sistemas</span><span>Desarrollo</span><span>Automatización</span><span>IA</span></div>
+      </article>
+      <article class="area-panel sport" data-panel="sport">
+        <p class="eyebrow">03 · PERFORMANCE</p>
+        <h2>Rendimiento humano</h2>
+        <p>Entrenamiento, nutrición deportiva, programación, hábitos, evaluación, coaching y mejora progresiva.</p>
+        <div class="chips"><span>Entrenamiento</span><span>Nutrición</span><span>Rendimiento</span><span>Coaching</span></div>
+      </article>
+    </section>
+
+    <section class="two-col" id="metodologia">
+      <article class="card methodology">
+        <p class="eyebrow">METODOLOGÍA</p>
+        <h2>Analizar → Diseñar → Ejecutar → Medir → Mejorar</h2>
+        <div class="method-steps">
+          <button data-step="Analizar"><b>01</b><span>Analizar</span></button>
+          <button data-step="Diseñar"><b>02</b><span>Diseñar</span></button>
+          <button data-step="Ejecutar"><b>03</b><span>Ejecutar</span></button>
+          <button data-step="Medir"><b>04</b><span>Medir</span></button>
+          <button data-step="Mejorar"><b>05</b><span>Mejorar</span></button>
+        </div>
+        <p id="methodCopy" class="method-copy">Entender contexto, necesidades, recursos, personas y restricciones antes de tomar decisiones.</p>
+      </article>
+
+      <article class="card connection-card">
+        <p class="eyebrow">LA CONEXIÓN</p>
+        <h2>People × Processes × Technology × Performance</h2>
+        <div class="flow">
+          <span class="f-person">PERSONAS<small>que inspiran</small></span>
+          <span class="f-process">PROCESOS<small>que ordenan</small></span>
+          <span class="f-tech">TECNOLOGÍA<small>que multiplica</small></span>
+          <span class="f-performance">RENDIMIENTO<small>que transforma</small></span>
+        </div>
+      </article>
+    </section>
+
+    <section class="projects card" id="proyectos">
+      <div class="section-head">
+        <div><p class="eyebrow">PROYECTOS CLAVE</p><h2>Selección multidisciplinar</h2></div>
+        <span class="muted">Diferentes áreas. Un mismo propósito.</span>
+      </div>
+      <div class="project-grid">
+        <button class="project" data-project="Chetesaí Fitness+"><strong>Chetesaí Fitness+</strong><span>Salud · Entrenamiento · Tecnología</span></button>
+        <button class="project" data-project="Farmagend"><strong>Farmagend</strong><span>Automatización · Negocio · Salud</span></button>
+        <button class="project" data-project="Portfolio IT"><strong>Portfolio IT</strong><span>Sistemas · Desarrollo · Ciberseguridad</span></button>
+        <button class="project" data-project="Hospitality"><strong>Hospitality</strong><span>Operaciones · Eventos · F&B</span></button>
+        <button class="project" data-project="Sport Performance"><strong>Sport Performance</strong><span>Entrenamiento · Nutrición · Coaching</span></button>
+        <button class="project" data-project="OpoStudy"><strong>OpoStudy</strong><span>Software · Datos · Formación</span></button>
+      </div>
+    </section>
+
+    <section class="card contact" id="contacto">
+      <p class="eyebrow">CONTACTO</p>
+      <h2>Let's build better systems.</h2>
+      <p>People · Technology · Performance</p>
+      <div class="contact-actions">
+        <a class="btn gold" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn" href="https://raymonchu48.github.io/Portfolio/" target="_blank" rel="noreferrer">Portfolio IT</a>
+        <a class="btn" href="https://raymonchu48.github.io/Deportivo/" target="_blank" rel="noreferrer">Portfolio Deportivo</a>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="detailDialog">
+    <button class="dialog-close" aria-label="Cerrar">×</button>
+    <p class="eyebrow" id="dialogEyebrow">DETALLE</p>
+    <h2 id="dialogTitle"></h2>
+    <p id="dialogBody"></p>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
