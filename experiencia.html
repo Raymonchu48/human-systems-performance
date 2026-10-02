@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Experiencia 360° | Ramón A. Curbalán Vega</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;background:#f5f3ee;font-family:Arial,sans-serif;color:#102430}
+body{display:flex;flex-direction:column;overflow:hidden}
+.toolbar{
+  min-height:68px;display:flex;align-items:center;gap:16px;padding:10px clamp(12px,3vw,32px);
+  background:#f7f5f0;border-bottom:1px solid #d8e1e5;
+  box-shadow:0 8px 28px rgba(16,36,48,.12);z-index:10
+}
+.back{
+  display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#102430;
+  background:#e6ba46;border:1px solid #d7aa35;border-radius:999px;padding:11px 18px;
+  font-weight:800;white-space:nowrap
+}
+.back:hover{filter:brightness(1.04)}
+.identity{min-width:0;line-height:1.15}
+.identity strong{display:block;font-size:clamp(14px,2vw,20px);letter-spacing:.03em}
+.identity span{display:block;color:#708896;font-size:12px;margin-top:4px;letter-spacing:.08em}
+.actions{margin-left:auto;display:flex;gap:10px}
+.open{
+  color:#0d769e;text-decoration:none;border:1px solid #35bce8;
+  border-radius:999px;padding:10px 14px;font-size:13px;font-weight:700;white-space:nowrap
+}
+.viewer{position:relative;flex:1;min-height:0;background:#e9ecee}
+.viewer iframe{width:100%;height:100%;border:0;background:#fff;display:block}
+@media(max-width:620px){
+  .toolbar{min-height:60px;padding:8px 10px}
+  .identity span{display:none}
+  .back{padding:10px 13px;font-size:13px}
+  .open{padding:9px 10px;font-size:12px}
+}
+</style>
+</head>
+<body>
+<header class="toolbar">
+  <a class="back" href="./" aria-label="Volver al cluster">← Volver al cluster</a>
+  <div class="identity">
+    <strong>EXPERIENCIA 360°</strong>
+    <span>HOSTELERÍA · TECNOLOGÍA · DEPORTE</span>
+  </div>
+  <div class="actions">
+    <a class="open" href="assets/Experiencia_360_Ramon_Curbalan.pdf" target="_blank" rel="noopener">Abrir PDF</a>
+  </div>
+</header>
+<main class="viewer">
+  <iframe
+    src="assets/Experiencia_360_Ramon_Curbalan.pdf#view=FitH"
+    title="Experiencia 360 de Ramón A. Curbalán Vega">
+  </iframe>
+</main>
+</body>
+</html>
