@@ -1,0 +1,34 @@
+name: Integrate IT profile into master cluster
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/integrate_it_profile.py'
+      - '.github/workflows/integrate-it-profile.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pillow
+      - name: Integrate IT profile directly into cluster master
+        run: python tools/integrate_it_profile.py
+      - name: Remove one-off workflow and commit master
+        run: |
+          rm -f .github/workflows/integrate-it-profile.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Integrate IT profile naturally into technology section"
+          git push
