@@ -17,10 +17,9 @@
 html,body{margin:0;width:100%;min-height:100%;background:var(--bg);color:var(--ink);font-family:var(--sans)}
 body{overflow-x:hidden}
 .cluster-stage{position:relative;width:min(100vw,1672px);aspect-ratio:1672/941;margin:0 auto;background:#000;overflow:hidden;isolation:isolate}
-.cluster-stage img{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;
-  user-select:none;-webkit-user-drag:none;filter:saturate(.96) contrast(1) brightness(1);
-  transition:filter .4s ease;
+.cluster-stage canvas{
+  position:absolute;inset:0;width:100%;height:100%;display:block;
+  user-select:none;pointer-events:none;filter:saturate(.96) contrast(1) brightness(1);
 }
 .cluster-stage::before{
   content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
@@ -231,7 +230,8 @@ dialog h2{font-family:var(--serif);font-weight:700}
 </head>
 <body>
 <main class="cluster-stage" id="cluster">
-<img src="assets/cluster-approved.webp?v=sport-compact-integrated" alt="Cluster Human Systems Performance de Ramón A. Curbalán Vega">
+<canvas id="clusterCanvas" width="1672" height="941" role="img" aria-label="Cluster Human Systems Performance de Ramón A. Curbalán Vega"></canvas>
+<noscript><img src="assets/cluster-approved.webp?v=clean-master" alt="Cluster Human Systems Performance de Ramón A. Curbalán Vega" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain"></noscript>
 
 <!-- navegación -->
 <button class="hotspot nav-hotspot" style="left:28.4%;top:0;width:5.3%;height:6.8%" data-open="Inicio" aria-label="Inicio"></button>
@@ -315,6 +315,43 @@ dialog h2{font-family:var(--serif);font-weight:700}
 </dialog>
 
 <script>
+(() => {
+  const canvas=document.getElementById('clusterCanvas');
+  const ctx=canvas.getContext('2d');
+  const base=new Image();
+  const approved=new Image();
+  let baseReady=false,approvedReady=false;
+  const draw=()=>{
+    if(!baseReady)return;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.drawImage(base,0,0,1672,941);
+    if(!approvedReady)return;
+
+    // Núcleo central integrado en un único render del cluster.
+    // No existe una capa DOM superpuesta: el resultado final es un solo canvas.
+    const cx=836, cy=274, r=199;
+    const d=r*2;
+    const temp=document.createElement('canvas');
+    temp.width=d; temp.height=d;
+    const t=temp.getContext('2d');
+    t.drawImage(approved,0,0,approved.width,approved.height,0,0,d,d);
+
+    // Fundido mínimo en el borde para unir fotografía, paisaje y aro existente.
+    t.globalCompositeOperation='destination-in';
+    const g=t.createRadialGradient(r,r,r-14,r,r,r);
+    g.addColorStop(0,'rgba(0,0,0,1)');
+    g.addColorStop(.72,'rgba(0,0,0,1)');
+    g.addColorStop(1,'rgba(0,0,0,0)');
+    t.fillStyle=g;t.fillRect(0,0,d,d);
+
+    ctx.drawImage(temp,cx-r,cy-r);
+  };
+  base.onload=()=>{baseReady=true;draw()};
+  approved.onload=()=>{approvedReady=true;draw()};
+  base.src='assets/cluster-approved.webp?v=clean-master-portrait';
+  approved.src='assets/approved-central-small.webp?v=approved-portrait';
+})();
+
 const modal=document.getElementById('modal'),title=document.getElementById('modalTitle'),body=document.getElementById('modalBody');
 
 const hostData={
