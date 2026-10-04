@@ -4,20 +4,127 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ramón A. Curbalán Vega | Human · Systems · Performance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}
-html,body{margin:0;width:100%;min-height:100%;background:#000;color:#fff;font-family:Arial,sans-serif}
+:root{
+  --bg:#03070b;--panel:rgba(7,18,27,.88);--ink:#f2f5f7;--mut:#9eb0bc;
+  --gold:#e2b84f;--cyan:#3cb4e1;--green:#54c277;--line:rgba(255,255,255,.09);
+  --serif:"Fraunces",Georgia,serif;--sans:"Inter",Arial,sans-serif;
+}
+html,body{margin:0;width:100%;min-height:100%;background:var(--bg);color:var(--ink);font-family:var(--sans)}
 body{overflow-x:hidden}
-.cluster-stage{position:relative;width:min(100vw,1672px);aspect-ratio:1672/941;margin:0 auto;background:#000;overflow:hidden}
-.cluster-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;user-select:none;-webkit-user-drag:none}
+.cluster-stage{position:relative;width:min(100vw,1672px);aspect-ratio:1672/941;margin:0 auto;background:#000;overflow:hidden;isolation:isolate}
+.cluster-stage img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;
+  user-select:none;-webkit-user-drag:none;filter:saturate(.90) contrast(.985) brightness(.965);
+  transition:filter .4s ease;
+}
+.cluster-stage::before{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(2,7,11,.18) 0%,rgba(2,7,11,.02) 18%,rgba(2,7,11,.00) 72%,rgba(2,7,11,.08) 100%),
+    radial-gradient(120% 100% at 50% 50%,transparent 65%,rgba(0,0,0,.20) 100%);
+}
+.cluster-stage::after{
+  content:"";position:absolute;left:0;right:0;top:0;height:7.2%;z-index:3;pointer-events:none;
+  background:linear-gradient(180deg,rgba(3,10,16,.64),rgba(3,10,16,.36) 72%,transparent);
+  border-bottom:1px solid rgba(255,255,255,.055);
+  backdrop-filter:blur(2.5px);
+}
 .hotspot{position:absolute;border:0;background:transparent;color:transparent;cursor:pointer;z-index:5;padding:0}
-.hotspot:focus-visible{outline:2px solid #fff;outline-offset:-2px}
+.hotspot:focus-visible{outline:1px solid rgba(255,255,255,.8);outline-offset:-2px}
 dialog{width:min(560px,92vw);border:1px solid rgba(255,255,255,.18);border-radius:18px;background:#071722;color:#fff;padding:28px;box-shadow:0 30px 100px rgba(0,0,0,.75)}
 dialog::backdrop{background:rgba(0,0,0,.72);backdrop-filter:blur(5px)}
 dialog button.close{position:absolute;right:12px;top:8px;border:0;background:none;color:#fff;font-size:28px;cursor:pointer}
 dialog small{color:#ffd76b;font-weight:700;letter-spacing:.12em}
 dialog h2{margin:8px 0 10px;font-size:28px}
 dialog p{margin:0;color:#c9d6dc;line-height:1.65}
+
+
+/* --- Premium interaction layer --- */
+.nav-hotspot{
+  border-radius:10px;transition:background .25s ease,box-shadow .25s ease;
+}
+.nav-hotspot::after{
+  content:"";position:absolute;left:22%;right:22%;bottom:4px;height:1.5px;border-radius:2px;
+  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+  opacity:0;transform:scaleX(.45);transition:opacity .25s ease,transform .25s ease;
+}
+.nav-hotspot:hover{background:rgba(255,255,255,.025)}
+.nav-hotspot:hover::after,.nav-hotspot:focus-visible::after{opacity:.9;transform:scaleX(1)}
+
+.node-hotspot{border-radius:50%;transition:transform .28s ease,filter .28s ease}
+.node-hotspot::after{
+  content:"";position:absolute;inset:8%;border-radius:50%;border:1px solid currentColor;
+  opacity:0;transform:scale(.92);transition:opacity .28s ease,transform .28s ease,box-shadow .28s ease;
+}
+.node-hotspot::before{
+  content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 10px);
+  transform:translateX(-50%) translateY(5px);opacity:0;pointer-events:none;white-space:nowrap;
+  color:#eef4f7;background:rgba(7,18,27,.94);border:1px solid var(--line);border-radius:999px;
+  padding:7px 11px;font:600 clamp(8px,.64vw,11px) var(--sans);letter-spacing:.07em;
+  box-shadow:0 12px 30px rgba(0,0,0,.35);transition:.25s;
+}
+.node-hotspot:hover{transform:scale(1.025)}
+.node-hotspot:hover::before,.node-hotspot:focus-visible::before{opacity:1;transform:translateX(-50%) translateY(0)}
+.node-hotspot:hover::after,.node-hotspot:focus-visible::after{opacity:.75;transform:scale(1)}
+.node-host{color:rgba(226,184,79,.72)}
+.node-tech{color:rgba(60,180,225,.72)}
+.node-sport{color:rgba(84,194,119,.78)}
+.node-host:hover::after{box-shadow:0 0 16px rgba(226,184,79,.20)}
+.node-tech:hover::after{box-shadow:0 0 16px rgba(60,180,225,.20)}
+.node-sport:hover::after{box-shadow:0 0 16px rgba(84,194,119,.20)}
+
+.project-hotspot{
+  border-radius:13px;border:1px solid transparent;transition:background .25s ease,border-color .25s ease,transform .25s ease,box-shadow .25s ease;
+}
+.project-hotspot:hover,.project-hotspot:focus-visible{
+  transform:translateY(-2px);background:rgba(255,255,255,.025);
+  border-color:rgba(255,255,255,.14);box-shadow:0 12px 26px rgba(0,0,0,.18);
+}
+
+/* Tecnología: filas interactivas */
+.tech-step{
+  position:absolute;z-index:8;border:1px solid transparent;border-radius:9px;
+  background:rgba(60,180,225,0);cursor:pointer;padding:0;
+  transition:background .24s ease,border-color .24s ease,box-shadow .24s ease,transform .24s ease;
+}
+.tech-step:hover,.tech-step:focus-visible,.tech-step.active{
+  background:rgba(60,180,225,.075);border-color:rgba(91,205,242,.26);
+  box-shadow:inset 0 0 12px rgba(60,180,225,.10),0 0 10px rgba(60,180,225,.10);outline:none;
+}
+.tech-step:hover{transform:translateX(-2px)}
+.tech-detail{
+  position:absolute;left:65.3%;top:9.2%;width:21.8%;min-height:24%;z-index:12;
+  padding:19px 22px;border:1px solid rgba(60,180,225,.58);border-radius:18px;
+  background:linear-gradient(135deg,rgba(5,16,24,.96),rgba(8,27,38,.93));
+  box-shadow:0 24px 70px rgba(0,0,0,.45),0 0 24px rgba(60,180,225,.08);
+  backdrop-filter:blur(9px);opacity:0;transform:translateX(20px) scale(.985);pointer-events:none;
+  transition:opacity .28s ease,transform .28s cubic-bezier(.2,.75,.25,1);
+}
+.tech-detail.open{opacity:1;transform:translateX(0) scale(1);pointer-events:auto}
+.tech-detail::after{
+  content:"";position:absolute;right:-18px;top:38px;width:18px;height:2px;
+  background:linear-gradient(90deg,rgba(60,180,225,.9),rgba(60,180,225,0));
+}
+.tech-detail .eyebrow{font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--cyan);margin-bottom:6px}
+.tech-detail h3{margin:0 34px 8px 0;font-family:var(--serif);font-size:clamp(18px,1.45vw,27px);line-height:1.05}
+.tech-detail p{margin:0 0 10px;color:#cbd7dc;font-size:clamp(11px,.82vw,15px);line-height:1.45}
+.tech-detail ul{margin:8px 0 0;padding-left:18px;color:#edf3f5;font-size:clamp(10px,.75vw,14px);line-height:1.42}
+.tech-detail li{margin:4px 0}
+.tech-detail .tech-tag{margin-top:12px;padding-top:10px;border-top:1px solid rgba(60,180,225,.18);color:#8fdcf6;font-size:clamp(9px,.67vw,12px);font-weight:700}
+.tech-detail .tech-close{position:absolute;right:10px;top:8px;border:0;background:transparent;color:#fff;font-size:24px;line-height:1;cursor:pointer;opacity:.7}
+.tech-detail .tech-close:hover{opacity:1;color:#8fdcf6}
+
+/* Diálogos menos artificiales */
+dialog{
+  font-family:var(--sans);background:linear-gradient(160deg,rgba(7,18,27,.98),rgba(10,24,36,.96));
+  border:1px solid rgba(255,255,255,.11);box-shadow:0 28px 90px rgba(0,0,0,.58);
+}
+dialog h2{font-family:var(--serif);font-weight:700}
 
 /* Fases interactivas de Hostelería */
 .host-step{
@@ -26,9 +133,9 @@ dialog p{margin:0;color:#c9d6dc;line-height:1.65}
   transition:background .22s ease,box-shadow .22s ease,border-color .22s ease,transform .22s ease;
 }
 .host-step:hover,.host-step:focus-visible,.host-step.active{
-  background:rgba(224,183,73,.12);
-  border-color:rgba(255,218,112,.42);
-  box-shadow:inset 0 0 18px rgba(255,205,73,.16),0 0 14px rgba(255,190,55,.18);
+  background:rgba(224,183,73,.075);
+  border-color:rgba(255,218,112,.28);
+  box-shadow:inset 0 0 12px rgba(255,205,73,.10),0 0 9px rgba(255,190,55,.10);
   outline:none;
 }
 .host-step:hover{transform:translateX(2px)}
@@ -47,7 +154,7 @@ dialog p{margin:0;color:#c9d6dc;line-height:1.65}
   background:linear-gradient(90deg,rgba(224,183,73,0),rgba(224,183,73,.9));
 }
 .host-detail .eyebrow{font-size:11px;font-weight:800;letter-spacing:.16em;color:#e0b749;margin-bottom:6px}
-.host-detail h3{margin:0 34px 8px 0;font-size:clamp(18px,1.55vw,28px);line-height:1.05}
+.host-detail h3{margin:0 34px 8px 0;font-family:var(--serif);font-size:clamp(18px,1.55vw,28px);line-height:1.05}
 .host-detail p{margin:0 0 10px;color:#cbd7dc;font-size:clamp(11px,.82vw,15px);line-height:1.45}
 .host-detail ul{margin:8px 0 0;padding-left:18px;color:#edf3f5;font-size:clamp(10px,.76vw,14px);line-height:1.42}
 .host-detail li{margin:4px 0}
@@ -65,6 +172,8 @@ dialog p{margin:0;color:#c9d6dc;line-height:1.65}
  .cluster-stage{width:100vw;min-width:0}
  .host-detail{left:13%;top:17.5%;width:38%;padding:11px 12px;min-height:24%}
  .host-detail h3{font-size:14px}.host-detail p,.host-detail ul{font-size:9px}
+ .tech-detail{left:59%;top:8.5%;width:28%;padding:11px 12px}
+ .tech-detail h3{font-size:14px}.tech-detail p,.tech-detail ul{font-size:9px}
 }
 </style>
 </head>
@@ -73,17 +182,17 @@ dialog p{margin:0;color:#c9d6dc;line-height:1.65}
 <img src="assets/cluster-approved.webp?v=no-social-hablemos" alt="Cluster Human Systems Performance de Ramón A. Curbalán Vega">
 
 <!-- navegación -->
-<button class="hotspot" style="left:28.4%;top:0;width:5.3%;height:6.8%" data-open="Inicio" aria-label="Inicio"></button>
-<a class="hotspot" style="left:34.1%;top:0;width:6%;height:6.8%" href="perfil.html" aria-label="Mi perfil"></a>
-<a class="hotspot" style="left:40.2%;top:0;width:6.4%;height:6.8%" href="experiencia.html" aria-label="Experiencia"></a>
-<a class="hotspot" style="left:47%;top:0;width:6.6%;height:6.8%" href="metodologia.html" aria-label="Metodología"></a>
-<button class="hotspot" style="left:54%;top:0;width:6.5%;height:6.8%" data-open="Proyectos" aria-label="Proyectos"></button>
-<a class="hotspot" style="left:60.8%;top:0;width:6.4%;height:6.8%" href="contacto.html" aria-label="Contacto"></a>
+<button class="hotspot nav-hotspot" style="left:28.4%;top:0;width:5.3%;height:6.8%" data-open="Inicio" aria-label="Inicio"></button>
+<a class="hotspot nav-hotspot" style="left:34.1%;top:0;width:6%;height:6.8%" href="perfil.html" aria-label="Mi perfil"></a>
+<a class="hotspot nav-hotspot" style="left:40.2%;top:0;width:6.4%;height:6.8%" href="experiencia.html" aria-label="Experiencia"></a>
+<a class="hotspot nav-hotspot" style="left:47%;top:0;width:6.6%;height:6.8%" href="metodologia.html" aria-label="Metodología"></a>
+<button class="hotspot nav-hotspot" style="left:54%;top:0;width:6.5%;height:6.8%" data-open="Proyectos" aria-label="Proyectos"></button>
+<a class="hotspot nav-hotspot" style="left:60.8%;top:0;width:6.4%;height:6.8%" href="contacto.html" aria-label="Contacto"></a>
 
 <!-- nodos centrales -->
-<a class="hotspot" style="left:33.5%;top:25.2%;width:7.4%;height:11.5%" href="https://raymonchu48.github.io/Portfolio_Hosteleria/" aria-label="F&B"></a>
-<a class="hotspot" style="left:57.8%;top:25.2%;width:7%;height:11.5%" href="https://raymonchu48.github.io/Portfolio/" aria-label="IT"></a>
-<a class="hotspot" style="left:44.5%;top:46.4%;width:8.4%;height:13%" href="https://raymonchu48.github.io/Deportivo/" aria-label="Sport"></a>
+<a class="hotspot node-hotspot node-host" style="left:33.5%;top:25.2%;width:7.4%;height:11.5%" href="https://raymonchu48.github.io/Portfolio_Hosteleria/" aria-label="F&B" data-tip="F&B · ABRIR PORTFOLIO"></a>
+<a class="hotspot node-hotspot node-tech" style="left:57.8%;top:25.2%;width:7%;height:11.5%" href="https://raymonchu48.github.io/Portfolio/" aria-label="IT" data-tip="IT · ABRIR PORTFOLIO"></a>
+<a class="hotspot node-hotspot node-sport" style="left:44.5%;top:46.4%;width:8.4%;height:13%" href="https://raymonchu48.github.io/Deportivo/" aria-label="Sport" data-tip="SPORT · ABRIR PORTFOLIO"></a>
 
 <!-- hostelería -->
 <button class="host-step" style="left:2.75%;top:20.40%;width:9.50%;height:3.83%" data-host-step="planificacion" aria-label="Planificación en hostelería"></button>
@@ -102,7 +211,21 @@ dialog p{margin:0;color:#c9d6dc;line-height:1.65}
 </aside>
 <button class="hotspot" style="left:1.4%;top:40.3%;width:15.1%;height:17.4%" data-open="KPIs" aria-label="KPIs de hostelería"></button>
 <!-- tecnología -->
-<button class="hotspot" style="left:88.7%;top:8.8%;width:9.6%;height:27%" data-open="Tecnología" aria-label="Áreas de tecnología"></button>
+<button class="tech-step" style="left:88.75%;top:9.05%;width:9.15%;height:4.20%" data-tech-step="desarrollo" aria-label="Desarrollo"></button>
+<button class="tech-step" style="left:88.75%;top:13.50%;width:9.15%;height:4.20%" data-tech-step="sistemas" aria-label="Sistemas"></button>
+<button class="tech-step" style="left:88.75%;top:17.95%;width:9.15%;height:4.20%" data-tech-step="redes" aria-label="Redes"></button>
+<button class="tech-step" style="left:88.75%;top:22.40%;width:9.15%;height:4.20%" data-tech-step="seguridad" aria-label="Seguridad"></button>
+<button class="tech-step" style="left:88.75%;top:26.85%;width:9.15%;height:4.20%" data-tech-step="ia" aria-label="IA y datos"></button>
+<button class="tech-step" style="left:88.75%;top:31.30%;width:9.15%;height:4.20%" data-tech-step="automatizacion" aria-label="Automatización"></button>
+
+<aside class="tech-detail" id="techDetail" aria-live="polite" aria-hidden="true">
+  <button class="tech-close" id="techClose" aria-label="Cerrar detalle">×</button>
+  <div class="eyebrow">TECNOLOGÍA · SYSTEMS</div>
+  <h3 id="techTitle"></h3>
+  <p id="techIntro"></p>
+  <ul id="techList"></ul>
+  <div class="tech-tag" id="techTag"></div>
+</aside>
 <!-- deporte -->
 <button class="hotspot" style="left:22%;top:54%;width:61%;height:35%" data-open="Deporte" aria-label="Rendimiento deportivo"></button>
 
@@ -111,10 +234,10 @@ dialog p{margin:0;color:#c9d6dc;line-height:1.65}
 <button class="hotspot" style="left:84.5%;top:77.4%;width:13.8%;height:11.6%" data-open="La conexión" aria-label="La conexión"></button>
 
 <!-- proyectos inferiores -->
-<a class="hotspot" style="left:11.5%;top:90.2%;width:22%;height:8%" href="https://chetesaifitness.com/" target="_blank" rel="noreferrer" aria-label="Chetesaí Fitness+"></a>
-<a class="hotspot" style="left:33.5%;top:90.2%;width:24%;height:8%" href="https://raymonchu48.github.io/Test-de-Oposicion-TAI/" aria-label="OpoStudy"></a>
-<a class="hotspot" style="left:58%;top:90.2%;width:20.5%;height:8%" href="farmagend.html" aria-label="Farmagend 24/7"></a>
-<a class="hotspot" style="left:78.5%;top:90.2%;width:19.2%;height:8%" href="https://raymonchu48.github.io/App_Inventarios/" aria-label="Banquete Fácil"></a>
+<a class="hotspot project-hotspot" style="left:11.5%;top:90.2%;width:22%;height:8%" href="https://chetesaifitness.com/" target="_blank" rel="noreferrer" aria-label="Chetesaí Fitness+"></a>
+<a class="hotspot project-hotspot" style="left:33.5%;top:90.2%;width:24%;height:8%" href="https://raymonchu48.github.io/Test-de-Oposicion-TAI/" aria-label="OpoStudy"></a>
+<a class="hotspot project-hotspot" style="left:58%;top:90.2%;width:20.5%;height:8%" href="farmagend.html" aria-label="Farmagend 24/7"></a>
+<a class="hotspot project-hotspot" style="left:78.5%;top:90.2%;width:19.2%;height:8%" href="https://raymonchu48.github.io/App_Inventarios/" aria-label="Banquete Fácil"></a>
 </main>
 
 <dialog id="modal">
@@ -197,12 +320,102 @@ hostButtons.forEach(btn=>btn.addEventListener('click',e=>{
  hostList.innerHTML=d.bullets.map(x=>'<li>'+x+'</li>').join('');
  hostTag.textContent=d.tag;
  hostPanel.classList.add('open');hostPanel.setAttribute('aria-hidden','false');
+ closeTechDetail();
 }));
 document.getElementById('hostClose').addEventListener('click',e=>{e.stopPropagation();closeHostDetail()});
 document.addEventListener('click',e=>{
  if(hostPanel.classList.contains('open') && !hostPanel.contains(e.target) && !e.target.closest('[data-host-step]')) closeHostDetail();
 });
 document.addEventListener('keydown',e=>{if(e.key==='Escape') closeHostDetail()});
+
+
+const techData={
+ desarrollo:{
+  title:'Desarrollo',
+  intro:'Construyo soluciones digitales partiendo del problema real y del flujo de usuario.',
+  bullets:[
+   'Frontend, lógica de aplicación e integración con servicios y datos.',
+   'Diseño responsive y pruebas orientadas a uso real en desktop, tablet y móvil.',
+   'Iteración por versiones para mejorar sin romper lo que ya funciona.'
+  ],
+  tag:'Criterio: código útil, mantenible y conectado a una necesidad concreta.'
+ },
+ sistemas:{
+  title:'Sistemas',
+  intro:'Trabajo la tecnología como un sistema completo, no como piezas aisladas.',
+  bullets:[
+   'Arquitectura, entornos, servicios, autenticación y despliegue.',
+   'Diseño de flujos fiables entre interfaz, backend y datos.',
+   'Documentación y control de cambios para mantener continuidad operativa.'
+  ],
+  tag:'Criterio: estabilidad, claridad y capacidad de evolución.'
+ },
+ redes:{
+  title:'Redes',
+  intro:'Entiendo la conectividad como infraestructura crítica para que el sistema pueda funcionar.',
+  bullets:[
+   'Direccionamiento, segmentación, NAT, VPN y diagnóstico de conectividad.',
+   'Análisis de tráfico y herramientas de comprobación como Nmap.',
+   'Diseño orientado a disponibilidad, rendimiento y resolución de incidencias.'
+  ],
+  tag:'Criterio: conectividad controlada y observable.'
+ },
+ seguridad:{
+  title:'Seguridad',
+  intro:'Integro seguridad desde el diseño para proteger accesos, datos y continuidad.',
+  bullets:[
+   'Principio de mínimo privilegio y control de autenticación.',
+   'Revisión de exposición, configuraciones y superficie de ataque.',
+   'Copias de seguridad, recuperación y reducción de errores operativos.'
+  ],
+  tag:'Criterio: seguridad práctica integrada en el sistema.'
+ },
+ ia:{
+  title:'IA & Data',
+  intro:'Utilizo datos e inteligencia aplicada para mejorar decisiones, experiencia y eficiencia.',
+  bullets:[
+   'Estructuración de información para convertir actividad en indicadores útiles.',
+   'Asistentes y automatizaciones orientados a tareas concretas.',
+   'Uso de IA como apoyo al criterio profesional, no como sustituto del proceso.'
+  ],
+  tag:'Criterio: datos con propósito y automatización con control.'
+ },
+ automatizacion:{
+  title:'Automatización',
+  intro:'Automatizo tareas repetitivas cuando eso reduce fricción y libera tiempo operativo.',
+  bullets:[
+   'Flujos automáticos entre aplicaciones, datos y acciones.',
+   'Eliminación de pasos manuales propensos a error.',
+   'Seguimiento y ajuste del proceso automatizado según resultados.'
+  ],
+  tag:'Criterio: menos fricción, más control y mejor escalabilidad.'
+ }
+};
+const techPanel=document.getElementById('techDetail');
+const techTitle=document.getElementById('techTitle');
+const techIntro=document.getElementById('techIntro');
+const techList=document.getElementById('techList');
+const techTag=document.getElementById('techTag');
+const techButtons=[...document.querySelectorAll('[data-tech-step]')];
+function closeTechDetail(){
+ techPanel.classList.remove('open');techPanel.setAttribute('aria-hidden','true');
+ techButtons.forEach(b=>b.classList.remove('active'));
+}
+techButtons.forEach(btn=>btn.addEventListener('click',e=>{
+ e.stopPropagation();
+ const d=techData[btn.dataset.techStep];
+ techButtons.forEach(b=>b.classList.toggle('active',b===btn));
+ techTitle.textContent=d.title;techIntro.textContent=d.intro;
+ techList.innerHTML=d.bullets.map(x=>'<li>'+x+'</li>').join('');
+ techTag.textContent=d.tag;
+ techPanel.classList.add('open');techPanel.setAttribute('aria-hidden','false');
+ closeHostDetail();
+}));
+document.getElementById('techClose').addEventListener('click',e=>{e.stopPropagation();closeTechDetail()});
+document.addEventListener('click',e=>{
+ if(techPanel.classList.contains('open') && !techPanel.contains(e.target) && !e.target.closest('[data-tech-step]')) closeTechDetail();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape') closeTechDetail()});
 
 const copy={
 'Inicio':'Tres disciplinas. Una misma forma de pensar: personas, procesos, tecnología y rendimiento.',
