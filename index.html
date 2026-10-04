@@ -125,6 +125,57 @@ dialog{
 }
 dialog h2{font-family:var(--serif);font-weight:700}
 
+
+/* Metodología + La Conexión: interacción integrada */
+.method-step,.connection-step{
+  position:absolute;z-index:8;border:1px solid transparent;border-radius:9px;
+  background:rgba(226,184,79,0);cursor:pointer;padding:0;
+  transition:background .22s ease,border-color .22s ease,box-shadow .22s ease;
+}
+.method-step:hover,.method-step:focus-visible,.method-step.active,
+.connection-step:hover,.connection-step:focus-visible,.connection-step.active{
+  background:rgba(226,184,79,.065);
+  border-color:rgba(240,201,91,.25);
+  box-shadow:inset 0 0 10px rgba(226,184,79,.10),0 0 8px rgba(226,184,79,.08);
+  outline:none;
+}
+.method-detail{
+  position:absolute;left:62.7%;top:57.2%;width:20.8%;min-height:23%;z-index:14;
+  padding:18px 21px 17px 23px;border:1px solid rgba(226,184,79,.54);border-radius:17px;
+  background:linear-gradient(145deg,rgba(5,15,21,.97),rgba(10,24,31,.95));
+  color:#fff;box-shadow:0 22px 62px rgba(0,0,0,.44),0 0 20px rgba(226,184,79,.07);
+  backdrop-filter:blur(7px);
+  opacity:0;transform:translateX(18px) scale(.988);pointer-events:none;
+  transition:opacity .27s ease,transform .27s cubic-bezier(.2,.75,.25,1);
+}
+.method-detail.open{opacity:1;transform:translateX(0) scale(1);pointer-events:auto}
+.method-detail::after{
+  content:"";position:absolute;right:-18px;top:38px;width:18px;height:1px;
+  background:linear-gradient(90deg,rgba(226,184,79,.85),rgba(226,184,79,0));
+}
+.method-detail .eyebrow{
+  font-size:11px;font-weight:800;letter-spacing:.15em;color:var(--gold);margin-bottom:6px
+}
+.method-detail h3{
+  margin:0 34px 8px 0;font-family:var(--serif);font-size:clamp(18px,1.42vw,27px);line-height:1.06
+}
+.method-detail p{
+  margin:0 0 10px;color:#cbd7dc;font-size:clamp(11px,.81vw,15px);line-height:1.45
+}
+.method-detail ul{
+  margin:7px 0 0;padding-left:18px;color:#eef3f5;font-size:clamp(10px,.74vw,14px);line-height:1.42
+}
+.method-detail li{margin:4px 0}
+.method-detail .method-tag{
+  margin-top:11px;padding-top:9px;border-top:1px solid rgba(226,184,79,.17);
+  color:#f0cd72;font-size:clamp(9px,.67vw,12px);font-weight:700
+}
+.method-detail .method-close{
+  position:absolute;right:10px;top:8px;border:0;background:transparent;color:#fff;
+  font-size:24px;line-height:1;cursor:pointer;opacity:.7
+}
+.method-detail .method-close:hover{opacity:1;color:#f0cd72}
+
 /* Fases interactivas de Hostelería */
 .host-step{
   position:absolute;z-index:8;border:1px solid transparent;border-radius:10px;
@@ -173,6 +224,8 @@ dialog h2{font-family:var(--serif);font-weight:700}
  .host-detail h3{font-size:14px}.host-detail p,.host-detail ul{font-size:9px}
  .tech-detail{left:59%;top:8.5%;width:28%;padding:11px 12px}
  .tech-detail h3{font-size:14px}.tech-detail p,.tech-detail ul{font-size:9px}
+ .method-detail{left:54%;top:56%;width:29%;padding:11px 12px}
+ .method-detail h3{font-size:14px}.method-detail p,.method-detail ul{font-size:9px}
 }
 </style>
 </head>
@@ -229,8 +282,23 @@ dialog h2{font-family:var(--serif);font-weight:700}
 <button class="hotspot" style="left:22%;top:54%;width:61%;height:35%" data-open="Deporte" aria-label="Rendimiento deportivo"></button>
 
 <!-- metodología / conexión -->
-<a class="hotspot" style="left:84.5%;top:55.7%;width:13.8%;height:21.5%" href="metodologia.html" aria-label="Mi metodología"></a>
-<button class="hotspot" style="left:84.5%;top:77.4%;width:13.8%;height:11.6%" data-open="La conexión" aria-label="La conexión"></button>
+<button class="method-step" style="left:85.45%;top:58.35%;width:12.15%;height:3.85%" data-method-step="planificacion" aria-label="Planificación de mi metodología"></button>
+<button class="method-step" style="left:85.45%;top:62.75%;width:12.15%;height:3.85%" data-method-step="ejecucion" aria-label="Ejecución de mi metodología"></button>
+<button class="method-step" style="left:85.45%;top:67.15%;width:12.15%;height:3.85%" data-method-step="seguimiento" aria-label="Seguimiento de mi metodología"></button>
+<button class="method-step" style="left:85.45%;top:71.55%;width:12.15%;height:3.85%" data-method-step="optimizacion" aria-label="Optimización de mi metodología"></button>
+
+<button class="connection-step" style="left:85.25%;top:81.15%;width:4.10%;height:6.65%" data-method-step="personas" aria-label="Personas"></button>
+<button class="connection-step" style="left:89.55%;top:81.15%;width:4.10%;height:6.65%" data-method-step="procesos" aria-label="Procesos"></button>
+<button class="connection-step" style="left:93.85%;top:81.15%;width:4.10%;height:6.65%" data-method-step="resultados" aria-label="Resultados"></button>
+
+<aside class="method-detail" id="methodDetail" aria-live="polite" aria-hidden="true">
+  <button class="method-close" id="methodClose" aria-label="Cerrar detalle">×</button>
+  <div class="eyebrow" id="methodEyebrow">MI METODOLOGÍA</div>
+  <h3 id="methodTitle"></h3>
+  <p id="methodIntro"></p>
+  <ul id="methodList"></ul>
+  <div class="method-tag" id="methodTag"></div>
+</aside>
 
 <!-- proyectos inferiores -->
 <a class="hotspot project-hotspot" style="left:11.5%;top:90.2%;width:22%;height:8%" href="https://chetesaifitness.com/" target="_blank" rel="noreferrer" aria-label="Chetesaí Fitness+"></a>
@@ -319,7 +387,7 @@ hostButtons.forEach(btn=>btn.addEventListener('click',e=>{
  hostList.innerHTML=d.bullets.map(x=>'<li>'+x+'</li>').join('');
  hostTag.textContent=d.tag;
  hostPanel.classList.add('open');hostPanel.setAttribute('aria-hidden','false');
- closeTechDetail();
+ closeTechDetail();closeMethodDetail();
 }));
 document.getElementById('hostClose').addEventListener('click',e=>{e.stopPropagation();closeHostDetail()});
 document.addEventListener('click',e=>{
@@ -408,13 +476,121 @@ techButtons.forEach(btn=>btn.addEventListener('click',e=>{
  techList.innerHTML=d.bullets.map(x=>'<li>'+x+'</li>').join('');
  techTag.textContent=d.tag;
  techPanel.classList.add('open');techPanel.setAttribute('aria-hidden','false');
- closeHostDetail();
+ closeHostDetail();closeMethodDetail();
 }));
 document.getElementById('techClose').addEventListener('click',e=>{e.stopPropagation();closeTechDetail()});
 document.addEventListener('click',e=>{
  if(techPanel.classList.contains('open') && !techPanel.contains(e.target) && !e.target.closest('[data-tech-step]')) closeTechDetail();
 });
 document.addEventListener('keydown',e=>{if(e.key==='Escape') closeTechDetail()});
+
+
+const methodData={
+ planificacion:{
+  group:'MI METODOLOGÍA',
+  title:'Planificación',
+  intro:'Defino el objetivo, el contexto y los recursos antes de ejecutar.',
+  bullets:[
+   'Traduzco la necesidad en prioridades, alcance y criterios de éxito.',
+   'Anticipo dependencias, riesgos, tiempos y puntos de control.',
+   'Alineo personas, herramientas y secuencia de trabajo.'
+  ],
+  tag:'Principio: empezar con claridad para reducir improvisación.'
+ },
+ ejecucion:{
+  group:'MI METODOLOGÍA',
+  title:'Ejecución',
+  intro:'Convierto la planificación en una secuencia de trabajo coordinada y visible.',
+  bullets:[
+   'Asigno responsabilidades y mantengo una comunicación operativa clara.',
+   'Coordino tiempos, herramientas y personas alrededor del objetivo.',
+   'Resuelvo incidencias sin perder el estándar definido.'
+  ],
+  tag:'Principio: disciplina operativa con capacidad de adaptación.'
+ },
+ seguimiento:{
+  group:'MI METODOLOGÍA',
+  title:'Seguimiento',
+  intro:'Observo el trabajo mientras ocurre para detectar desviaciones a tiempo.',
+  bullets:[
+   'Reviso avances, incidencias, experiencia y señales relevantes.',
+   'Comparo lo ejecutado con el objetivo y los criterios definidos.',
+   'Ajusto prioridades cuando cambia el contexto.'
+  ],
+  tag:'Principio: medir lo útil para decidir mejor.'
+ },
+ optimizacion:{
+  group:'MI METODOLOGÍA',
+  title:'Optimización',
+  intro:'Transformo la experiencia del ciclo en mejoras para el siguiente.',
+  bullets:[
+   'Identifico fricción, redundancias y oportunidades de simplificación.',
+   'Convierto resultados y feedback en acciones concretas.',
+   'Estandarizo lo que funciona y corrijo lo que no aporta valor.'
+  ],
+  tag:'Principio: cada ciclo debe dejar el sistema mejor que antes.'
+ },
+ personas:{
+  group:'LA CONEXIÓN',
+  title:'Personas',
+  intro:'Las personas son el punto de partida y el criterio final de cada sistema.',
+  bullets:[
+   'Escucho necesidades y contexto antes de diseñar una solución.',
+   'Coordino expectativas y comunicación entre perfiles distintos.',
+   'Busco que la operación, la tecnología o el entrenamiento sean realmente utilizables.'
+  ],
+  tag:'Conexión: liderazgo, servicio y experiencia humana.'
+ },
+ procesos:{
+  group:'LA CONEXIÓN',
+  title:'Procesos',
+  intro:'Los procesos convierten una intención en una forma de trabajar repetible.',
+  bullets:[
+   'Ordeno secuencias, responsabilidades y puntos de control.',
+   'Reduzco pasos innecesarios y errores operativos.',
+   'Conecto personas, herramientas y datos alrededor de un flujo claro.'
+  ],
+  tag:'Conexión: claridad, consistencia y capacidad de escala.'
+ },
+ resultados:{
+  group:'LA CONEXIÓN',
+  title:'Resultados',
+  intro:'El valor del sistema se comprueba en lo que mejora de forma observable.',
+  bullets:[
+   'Servicio y experiencia en Hostelería.',
+   'Fiabilidad, utilidad y automatización en Tecnología.',
+   'Progreso, adherencia y rendimiento sostenible en Deporte.'
+  ],
+  tag:'Conexión: convertir método y ejecución en impacto real.'
+ }
+};
+const methodPanel=document.getElementById('methodDetail');
+const methodEyebrow=document.getElementById('methodEyebrow');
+const methodTitle=document.getElementById('methodTitle');
+const methodIntro=document.getElementById('methodIntro');
+const methodList=document.getElementById('methodList');
+const methodTag=document.getElementById('methodTag');
+const methodButtons=[...document.querySelectorAll('[data-method-step]')];
+function closeMethodDetail(){
+ if(!methodPanel)return;
+ methodPanel.classList.remove('open');methodPanel.setAttribute('aria-hidden','true');
+ methodButtons.forEach(b=>b.classList.remove('active'));
+}
+methodButtons.forEach(btn=>btn.addEventListener('click',e=>{
+ e.stopPropagation();
+ const d=methodData[btn.dataset.methodStep];
+ methodButtons.forEach(b=>b.classList.toggle('active',b===btn));
+ methodEyebrow.textContent=d.group;methodTitle.textContent=d.title;methodIntro.textContent=d.intro;
+ methodList.innerHTML=d.bullets.map(x=>'<li>'+x+'</li>').join('');
+ methodTag.textContent=d.tag;
+ methodPanel.classList.add('open');methodPanel.setAttribute('aria-hidden','false');
+ closeHostDetail();closeTechDetail();
+}));
+document.getElementById('methodClose')?.addEventListener('click',e=>{e.stopPropagation();closeMethodDetail()});
+document.addEventListener('click',e=>{
+ if(methodPanel?.classList.contains('open') && !methodPanel.contains(e.target) && !e.target.closest('[data-method-step]')) closeMethodDetail();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape') closeMethodDetail()});
 
 const copy={
 'Inicio':'Tres disciplinas. Una misma forma de pensar: personas, procesos, tecnología y rendimiento.',
