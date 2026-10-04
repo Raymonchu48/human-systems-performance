@@ -34,6 +34,12 @@ body{overflow-x:hidden}
   border-bottom:1px solid rgba(255,255,255,.035);
   backdrop-filter:none;
 }
+.athlete-repair{
+  position:absolute;inset:0;z-index:4;pointer-events:none;
+  background:url("assets/cluster-approved-clean.webp") center/100% 100% no-repeat;
+  -webkit-mask-image:radial-gradient(ellipse 8.2% 14.5% at 25.1% 65.8%,#000 0 58%,rgba(0,0,0,.92) 68%,rgba(0,0,0,.45) 82%,transparent 100%);
+  mask-image:radial-gradient(ellipse 8.2% 14.5% at 25.1% 65.8%,#000 0 58%,rgba(0,0,0,.92) 68%,rgba(0,0,0,.45) 82%,transparent 100%);
+}
 .hotspot{position:absolute;border:0;background:transparent;color:transparent;cursor:pointer;z-index:5;padding:0}
 .hotspot:focus-visible{outline:1px solid rgba(255,255,255,.8);outline-offset:-2px}
 dialog{width:min(560px,92vw);border:1px solid rgba(255,255,255,.18);border-radius:18px;background:#071722;color:#fff;padding:28px;box-shadow:0 30px 100px rgba(0,0,0,.75)}
@@ -232,6 +238,7 @@ dialog h2{font-family:var(--serif);font-weight:700}
 <body>
 <main class="cluster-stage" id="cluster">
 <img src="assets/cluster-approved.webp?v=sport-compact-integrated" alt="Cluster Human Systems Performance de Ramón A. Curbalán Vega">
+<div class="athlete-repair" aria-hidden="true"></div>
 
 <!-- navegación -->
 <button class="hotspot nav-hotspot" style="left:28.4%;top:0;width:5.3%;height:6.8%" data-open="Inicio" aria-label="Inicio"></button>
