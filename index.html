@@ -19,20 +19,20 @@ body{overflow-x:hidden}
 .cluster-stage{position:relative;width:min(100vw,1672px);aspect-ratio:1672/941;margin:0 auto;background:#000;overflow:hidden;isolation:isolate}
 .cluster-stage img{
   position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;
-  user-select:none;-webkit-user-drag:none;filter:saturate(.90) contrast(.985) brightness(.965);
+  user-select:none;-webkit-user-drag:none;filter:saturate(.96) contrast(1) brightness(1);
   transition:filter .4s ease;
 }
 .cluster-stage::before{
   content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
   background:
-    linear-gradient(180deg,rgba(2,7,11,.18) 0%,rgba(2,7,11,.02) 18%,rgba(2,7,11,.00) 72%,rgba(2,7,11,.08) 100%),
-    radial-gradient(120% 100% at 50% 50%,transparent 65%,rgba(0,0,0,.20) 100%);
+    linear-gradient(180deg,rgba(2,7,11,.05) 0%,rgba(2,7,11,.00) 18%,rgba(2,7,11,.00) 72%,rgba(2,7,11,.06) 100%),
+    radial-gradient(120% 100% at 50% 50%,transparent 72%,rgba(0,0,0,.12) 100%);
 }
 .cluster-stage::after{
   content:"";position:absolute;left:0;right:0;top:0;height:7.2%;z-index:3;pointer-events:none;
-  background:linear-gradient(180deg,rgba(3,10,16,.64),rgba(3,10,16,.36) 72%,transparent);
-  border-bottom:1px solid rgba(255,255,255,.055);
-  backdrop-filter:blur(2.5px);
+  background:linear-gradient(180deg,rgba(3,10,16,.06),rgba(3,10,16,.02) 72%,transparent);
+  border-bottom:1px solid rgba(255,255,255,.035);
+  backdrop-filter:none;
 }
 .hotspot{position:absolute;border:0;background:transparent;color:transparent;cursor:pointer;z-index:5;padding:0}
 .hotspot:focus-visible{outline:1px solid rgba(255,255,255,.8);outline-offset:-2px}
