@@ -1,0 +1,29 @@
+name: Apply exact approved Technology region
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/apply_exact_tech.py'
+      - '.github/workflows/apply-exact-tech.yml'
+permissions:
+  contents: write
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pillow
+      - run: python tools/apply_exact_tech.py
+      - run: |
+          rm -f .github/workflows/apply-exact-tech.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Apply exact approved Technology region to cluster master"
+          git push
