@@ -17,10 +17,10 @@
 html,body{margin:0;width:100%;min-height:100%;background:var(--bg);color:var(--ink);font-family:var(--sans)}
 body{overflow-x:hidden}
 .cluster-stage{position:relative;width:min(100vw,1672px);aspect-ratio:1672/941;margin:0 auto;background:#000;overflow:hidden;isolation:isolate}
-.cluster-stage img{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;
-  user-select:none;-webkit-user-drag:none;filter:saturate(.96) contrast(1) brightness(1);
-  transition:filter .4s ease;
+.cluster-master-svg{
+  position:absolute;inset:0;width:100%;height:100%;display:block;z-index:2;
+  pointer-events:none;user-select:none;
+  filter:saturate(.96) contrast(1) brightness(1);
 }
 .cluster-stage::before{
   content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
@@ -127,54 +127,57 @@ dialog h2{font-family:var(--serif);font-weight:700}
 
 
 
-/* --- Tecnología reconstruida en HTML/CSS: no forma parte del bitmap maestro --- */
+/* --- Tecnología reconstruida dentro de la geometría del clúster --- */
 .tech-zone{
-  position:absolute;left:63.05%;top:7.75%;width:36.95%;height:46.65%;z-index:4;
+  position:absolute;left:63.6%;top:7.8%;width:36.4%;height:47.2%;z-index:1;
   overflow:hidden;color:#eef9fc;
   background:
-    radial-gradient(80% 70% at 38% 48%,rgba(13,91,126,.24),transparent 68%),
-    linear-gradient(90deg,#06131d 0%,#071722 54%,#04111a 100%);
-  clip-path:polygon(3.8% 0,100% 0,100% 100%,0 100%,0 88%,1.7% 76%,3.1% 60%,4.1% 43%,3.7% 26%,2.2% 11%);
-  box-shadow:inset 0 1px rgba(69,210,255,.45),inset 0 -1px rgba(69,210,255,.30);
+    radial-gradient(90% 95% at 28% 48%,rgba(22,104,142,.22),transparent 68%),
+    linear-gradient(90deg,#071722 0%,#061823 56%,#04111a 100%);
 }
 .tech-zone::before{
   content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
   background:
-    linear-gradient(90deg,rgba(3,12,19,.18) 0%,transparent 18%,transparent 70%,rgba(3,12,19,.62) 100%),
-    linear-gradient(180deg,rgba(3,13,20,.10) 0%,transparent 24%,transparent 78%,rgba(3,13,20,.42) 100%);
+    linear-gradient(90deg,rgba(2,11,18,.06) 0%,transparent 28%,transparent 67%,rgba(2,12,20,.72) 100%),
+    linear-gradient(180deg,rgba(3,14,22,.05),transparent 68%,rgba(3,14,22,.46));
 }
 .tech-photo{
-  position:absolute;left:0;top:17%;width:70%;height:83%;z-index:0;
-  background-image:url("assets/it-profile.jpg");
-  background-size:cover;background-position:54% 48%;
-  filter:saturate(.84) contrast(1.08) brightness(.72);
-}
-.tech-photo::after{
-  content:"";position:absolute;inset:0;
-  background:
-    linear-gradient(90deg,rgba(3,17,26,.30) 0%,transparent 34%,transparent 72%,rgba(4,18,29,.88) 100%),
-    linear-gradient(180deg,rgba(3,16,25,.12),transparent 62%,rgba(3,16,25,.48));
+  position:absolute;left:0;top:13%;width:73%;height:87%;z-index:0;
+  background:url("assets/it-profile.jpg") 56% 48% / cover no-repeat;
+  filter:saturate(.86) contrast(1.08) brightness(.72);
+  -webkit-mask-image:
+    linear-gradient(90deg,#000 0%,#000 77%,transparent 100%),
+    linear-gradient(180deg,#000 0%,#000 90%,transparent 100%);
+  -webkit-mask-composite:source-in;
+  mask-image:
+    linear-gradient(90deg,#000 0%,#000 77%,transparent 100%),
+    linear-gradient(180deg,#000 0%,#000 90%,transparent 100%);
+  mask-composite:intersect;
 }
 .tech-copy{
-  position:absolute;left:6.4%;top:4.5%;z-index:3;width:57%;
-  text-shadow:0 2px 12px rgba(0,0,0,.55)
+  position:absolute;left:5.4%;top:4.6%;z-index:3;width:58%;
+  text-shadow:0 2px 12px rgba(0,0,0,.58);
 }
-.tech-copy .kicker{font-size:clamp(8px,.70vw,12px);letter-spacing:.12em;color:#9ed7e8;font-weight:500}
+.tech-copy .kicker{
+  font-size:clamp(8px,.70vw,12px);letter-spacing:.12em;color:#9ed7e8;font-weight:600;
+}
 .tech-copy h2{
-  margin:.22em 0 .08em;font-family:var(--sans);font-size:clamp(22px,2.15vw,40px);
-  line-height:.92;letter-spacing:.015em;color:#45d3ff;font-weight:800
+  margin:.22em 0 .08em;font-family:var(--sans);font-size:clamp(23px,2.18vw,40px);
+  line-height:.92;letter-spacing:.012em;color:#45d3ff;font-weight:800;
 }
-.tech-copy p{margin:0;font-size:clamp(9px,.82vw,15px);letter-spacing:.035em;color:#8fd8eb;font-weight:600}
+.tech-copy p{
+  margin:0;font-size:clamp(9px,.82vw,15px);letter-spacing:.035em;color:#8fd8eb;font-weight:600;
+}
 .tech-rail{
-  position:absolute;right:2.1%;top:8.5%;width:32%;z-index:4;
-  display:flex;flex-direction:column;gap:1.15%;
+  position:absolute;right:2.0%;top:8.0%;width:32.4%;z-index:4;
+  display:flex;flex-direction:column;gap:7px;
 }
 .tech-zone .tech-step{
-  position:relative!important;left:auto!important;top:auto!important;width:100%!important;height:auto!important;
-  min-height:44px;display:flex;align-items:center;gap:12px;padding:8px 14px!important;
+  position:relative!important;left:auto!important;top:auto!important;width:100%!important;height:43px!important;
+  display:flex;align-items:center;gap:11px;padding:7px 13px!important;
   border:1px solid rgba(71,211,255,.72);border-radius:13px;
-  background:linear-gradient(180deg,rgba(4,24,35,.88),rgba(3,17,27,.92));
-  color:#f6fbfd;cursor:pointer;box-shadow:inset 0 0 18px rgba(40,177,224,.025);
+  background:linear-gradient(180deg,rgba(4,24,35,.92),rgba(3,17,27,.94));
+  color:#f6fbfd;cursor:pointer;
   transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease,background .2s ease;
 }
 .tech-zone .tech-step:hover,.tech-zone .tech-step:focus-visible,.tech-zone .tech-step.active{
@@ -183,37 +186,40 @@ dialog h2{font-family:var(--serif);font-weight:700}
 }
 .tech-zone .tech-step svg{
   width:24px;height:24px;flex:0 0 24px;stroke:#43d9ff;stroke-width:1.8;fill:none;
-  stroke-linecap:round;stroke-linejoin:round
+  stroke-linecap:round;stroke-linejoin:round;
 }
 .tech-zone .tech-step span{
-  font:700 clamp(9px,.76vw,14px) var(--sans);letter-spacing:.02em;color:#f2f8fa;text-align:left
+  font:700 clamp(9px,.76vw,14px) var(--sans);letter-spacing:.015em;color:#f2f8fa;text-align:left;
 }
 .tech-connector{
-  position:absolute;right:34.3%;top:11.3%;height:64%;width:1px;z-index:3;background:rgba(74,219,255,.82)
+  position:absolute;right:34.7%;top:11.0%;height:63.8%;width:1px;z-index:3;
+  background:rgba(74,219,255,.82);
 }
 .tech-connector i{
-  position:absolute;left:50%;width:9px;height:9px;border-radius:50%;background:#adf1ff;
-  border:1px solid #52dcff;transform:translate(-50%,-50%);box-shadow:0 0 12px rgba(82,220,255,.55)
+  position:absolute;left:50%;width:9px;height:9px;border-radius:50%;
+  background:#adf1ff;border:1px solid #52dcff;transform:translate(-50%,-50%);
+  box-shadow:0 0 12px rgba(82,220,255,.55);
 }
-.tech-connector i:nth-child(1){top:5%}.tech-connector i:nth-child(2){top:23%}
-.tech-connector i:nth-child(3){top:41%}.tech-connector i:nth-child(4){top:59%}
-.tech-connector i:nth-child(5){top:77%}.tech-connector i:nth-child(6){top:95%}
+.tech-connector i:nth-child(1){top:4%}.tech-connector i:nth-child(2){top:22.5%}
+.tech-connector i:nth-child(3){top:41%}.tech-connector i:nth-child(4){top:59.5%}
+.tech-connector i:nth-child(5){top:78%}.tech-connector i:nth-child(6){top:96%}
 .tech-quote{
-  position:absolute;right:2.1%;bottom:3.3%;width:48%;z-index:4;padding:11px 16px 11px 24px;
+  position:absolute;right:2%;bottom:4.0%;width:49%;z-index:4;padding:11px 15px 11px 24px;
   border:1px solid rgba(59,193,235,.68);border-radius:14px;
-  background:linear-gradient(90deg,rgba(4,23,34,.94),rgba(4,18,28,.90));
-  box-shadow:0 0 18px rgba(36,168,216,.08)
+  background:linear-gradient(90deg,rgba(4,23,34,.94),rgba(4,18,28,.92));
 }
-.tech-quote::before{content:"";position:absolute;left:11px;top:14px;bottom:14px;width:4px;background:#42d7ff;border-radius:3px}
+.tech-quote::before{
+  content:"";position:absolute;left:11px;top:14px;bottom:14px;width:4px;
+  background:#42d7ff;border-radius:3px;
+}
 .tech-quote p{margin:0;font-size:clamp(9px,.72vw,13px);line-height:1.35;color:#eef7fa}
 .tech-quote strong{display:block;color:#45d9ff;margin-top:2px;font-weight:700}
 
 @media(max-width:760px){
-  .tech-zone{left:62.3%;width:37.7%}
-  .tech-copy{left:7%;width:59%}
   .tech-copy h2{font-size:18px}
   .tech-copy .kicker,.tech-copy p{font-size:7px}
-  .tech-zone .tech-step{min-height:26px;padding:4px 7px!important;gap:5px;border-radius:8px}
+  .tech-rail{gap:3px}
+  .tech-zone .tech-step{height:27px!important;padding:3px 6px!important;gap:5px;border-radius:8px}
   .tech-zone .tech-step svg{width:14px;height:14px;flex-basis:14px}
   .tech-zone .tech-step span{font-size:7px}
   .tech-quote{padding:6px 7px 6px 15px}
@@ -325,7 +331,20 @@ dialog h2{font-family:var(--serif);font-weight:700}
 </head>
 <body>
 <main class="cluster-stage" id="cluster">
-<img src="assets/cluster-approved.webp?v=single-master" alt="Cluster Human Systems Performance de Ramón A. Curbalán Vega">
+<svg class="cluster-master-svg" viewBox="0 0 1672 941" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+  <defs>
+    <mask id="cluster-tech-hole">
+      <rect x="0" y="0" width="1672" height="941" fill="white"/>
+      <path d="M1084 76 H1672 V518 H1088
+               C1072 486 1066 452 1072 419
+               C1078 385 1091 350 1097 315
+               C1103 281 1101 245 1095 214
+               C1089 180 1078 137 1084 76 Z" fill="black"/>
+    </mask>
+  </defs>
+  <image href="assets/cluster-approved.webp?v=clean-master" x="0" y="0" width="1672" height="941"
+         preserveAspectRatio="xMidYMid meet" mask="url(#cluster-tech-hole)"/>
+</svg>
 
 <!-- navegación -->
 <button class="hotspot nav-hotspot" style="left:28.4%;top:0;width:5.3%;height:6.8%" data-open="Inicio" aria-label="Inicio"></button>
@@ -356,7 +375,7 @@ dialog h2{font-family:var(--serif);font-weight:700}
   <div class="host-tag" id="hostTag"></div>
 </aside>
 <button class="hotspot" style="left:1.4%;top:40.3%;width:15.1%;height:17.4%" data-open="KPIs" aria-label="KPIs de hostelería"></button>
-<!-- tecnología: construida directamente en HTML/CSS -->
+<!-- tecnología: reconstruida en el hueco real del máster -->
 <section class="tech-zone" aria-label="Tecnología">
   <div class="tech-photo" aria-hidden="true"></div>
 
