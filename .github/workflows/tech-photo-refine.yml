@@ -1,0 +1,29 @@
+name: Refine Technology scene
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/tech_photo_swap.py'
+      - '.github/workflows/tech-photo-refine.yml'
+permissions:
+  contents: write
+jobs:
+  refine:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pillow
+      - run: python tools/tech_photo_swap.py
+      - run: |
+          rm -f .github/workflows/tech-photo-refine.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Refine Technology scene framing"
+          git push
