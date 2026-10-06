@@ -127,28 +127,87 @@ dialog h2{font-family:var(--serif);font-weight:700}
 
 
 
-/* --- Tecnología: visual reconstruido dentro del SVG maestro; HTML solo para interacción --- */
-.tech-hotspot.tech-step{
-  position:absolute!important;
-  z-index:8!important;
-  padding:0!important;
-  border:0!important;
-  border-radius:10px!important;
-  background:transparent!important;
-  box-shadow:none!important;
-  color:transparent!important;
-  cursor:pointer;
-  outline:none;
-  transform:none!important;
+/* --- Tecnología reconstruida dentro de la geometría del clúster --- */
+.tech-zone{
+  position:absolute;left:63.45%;top:7.75%;width:36.55%;height:46.9%;z-index:1;
+  overflow:hidden;color:#eef9fc;
+  background:
+    linear-gradient(90deg,rgba(3,17,27,.18) 0%,rgba(3,17,27,.08) 46%,rgba(3,17,27,.70) 77%,rgba(3,17,27,.92) 100%),
+    linear-gradient(180deg,rgba(3,15,24,.02) 0%,rgba(3,15,24,.10) 68%,rgba(3,15,24,.52) 100%),
+    url("assets/it-profile.jpg") 100% 48% / 140% auto no-repeat;
 }
-.tech-hotspot.tech-step:hover,
-.tech-hotspot.tech-step:focus-visible,
-.tech-hotspot.tech-step.active{
-  background:rgba(69,211,255,.055)!important;
-  box-shadow:inset 0 0 0 1px rgba(109,225,255,.34),0 0 14px rgba(61,210,255,.10)!important;
-  transform:none!important;
+.tech-zone::before{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    radial-gradient(65% 78% at 31% 49%,rgba(34,154,205,.10),transparent 72%),
+    linear-gradient(90deg,rgba(2,11,18,.10),transparent 24%,transparent 66%,rgba(2,12,20,.30));
 }
-.tech-hotspot.tech-step:focus-visible{outline:1px solid rgba(109,225,255,.72);outline-offset:1px}
+.tech-copy{
+  position:absolute;left:5.4%;top:4.5%;z-index:3;width:59%;
+  text-shadow:0 2px 12px rgba(0,0,0,.62);
+}
+.tech-copy .kicker{font-size:clamp(8px,.70vw,12px);letter-spacing:.12em;color:#a8deec;font-weight:600}
+.tech-copy h2{
+  margin:.22em 0 .08em;font-family:var(--sans);font-size:clamp(23px,2.18vw,40px);
+  line-height:.92;letter-spacing:.012em;color:#45d3ff;font-weight:800
+}
+.tech-copy p{margin:0;font-size:clamp(9px,.82vw,15px);letter-spacing:.035em;color:#91daec;font-weight:600}
+.tech-rail{
+  position:absolute;right:2%;top:8%;width:32.4%;z-index:4;
+  display:flex;flex-direction:column;gap:7px
+}
+.tech-zone .tech-step{
+  position:relative!important;left:auto!important;top:auto!important;width:100%!important;height:43px!important;
+  display:flex;align-items:center;gap:11px;padding:7px 13px!important;
+  border:1px solid rgba(71,211,255,.72);border-radius:13px;
+  background:linear-gradient(180deg,rgba(4,24,35,.91),rgba(3,17,27,.94));
+  color:#f6fbfd;cursor:pointer;
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease,background .2s ease
+}
+.tech-zone .tech-step:hover,.tech-zone .tech-step:focus-visible,.tech-zone .tech-step.active{
+  transform:translateX(-3px);background:rgba(5,30,43,.98);
+  border-color:#6de1ff;box-shadow:0 0 16px rgba(61,210,255,.18),inset 0 0 16px rgba(61,210,255,.07)
+}
+.tech-zone .tech-step svg{
+  width:24px;height:24px;flex:0 0 24px;stroke:#43d9ff;stroke-width:1.8;fill:none;
+  stroke-linecap:round;stroke-linejoin:round
+}
+.tech-zone .tech-step span{
+  font:700 clamp(9px,.76vw,14px) var(--sans);letter-spacing:.015em;color:#f2f8fa;text-align:left
+}
+.tech-connector{
+  position:absolute;right:34.7%;top:11%;height:63.8%;width:1px;z-index:3;
+  background:rgba(74,219,255,.82)
+}
+.tech-connector i{
+  position:absolute;left:50%;width:9px;height:9px;border-radius:50%;
+  background:#adf1ff;border:1px solid #52dcff;transform:translate(-50%,-50%);
+  box-shadow:0 0 12px rgba(82,220,255,.55)
+}
+.tech-connector i:nth-child(1){top:4%}.tech-connector i:nth-child(2){top:22.5%}
+.tech-connector i:nth-child(3){top:41%}.tech-connector i:nth-child(4){top:59.5%}
+.tech-connector i:nth-child(5){top:78%}.tech-connector i:nth-child(6){top:96%}
+.tech-quote{
+  position:absolute;right:2%;bottom:3.5%;width:49%;z-index:4;padding:11px 15px 11px 24px;
+  border:1px solid rgba(59,193,235,.68);border-radius:14px;
+  background:linear-gradient(90deg,rgba(4,23,34,.94),rgba(4,18,28,.92))
+}
+.tech-quote::before{
+  content:"";position:absolute;left:11px;top:14px;bottom:14px;width:4px;background:#42d7ff;border-radius:3px
+}
+.tech-quote p{margin:0;font-size:clamp(9px,.72vw,13px);line-height:1.35;color:#eef7fa}
+.tech-quote strong{display:block;color:#45d9ff;margin-top:2px;font-weight:700}
+
+@media(max-width:760px){
+  .tech-copy h2{font-size:18px}
+  .tech-copy .kicker,.tech-copy p{font-size:7px}
+  .tech-rail{gap:3px}
+  .tech-zone .tech-step{height:27px!important;padding:3px 6px!important;gap:5px;border-radius:8px}
+  .tech-zone .tech-step svg{width:14px;height:14px;flex-basis:14px}
+  .tech-zone .tech-step span{font-size:7px}
+  .tech-quote{padding:6px 7px 6px 15px}
+  .tech-quote p{font-size:6.5px}
+}
 
 /* Metodología + La Conexión: interacción integrada */
 .method-step,.connection-step{
@@ -270,107 +329,6 @@ dialog h2{font-family:var(--serif);font-weight:700}
   </defs>
   <image href="assets/cluster-approved.webp?v=clean-master" x="0" y="0" width="1672" height="941"
          preserveAspectRatio="xMidYMid meet" mask="url(#cluster-tech-hole)"/>
-
-  <!-- TECNOLOGÍA: reconstruida como parte del SVG maestro, no como imagen/capa HTML superpuesta -->
-  <defs>
-    <clipPath id="tech-zone-clip">
-      <path d="M1088 76 H1672 V505
-               C1585 510 1490 511 1390 508
-               C1288 505 1188 500 1095 493
-               C1079 460 1072 425 1076 389
-               C1080 354 1090 326 1098 296
-               C1107 260 1104 224 1096 193
-               C1088 160 1080 120 1088 76 Z"/>
-    </clipPath>
-    <clipPath id="tech-photo-clip">
-      <path d="M1088 76 H1484 V505
-               C1390 508 1288 505 1188 500
-               C1148 498 1120 495 1095 493
-               C1079 460 1072 425 1076 389
-               C1080 354 1090 326 1098 296
-               C1107 260 1104 224 1096 193
-               C1088 160 1080 120 1088 76 Z"/>
-    </clipPath>
-    <linearGradient id="tech-bg-grad" x1="0" x2="1">
-      <stop offset="0" stop-color="#061923"/>
-      <stop offset=".62" stop-color="#071822"/>
-      <stop offset="1" stop-color="#04111a"/>
-    </linearGradient>
-    <linearGradient id="tech-photo-fade" x1="0" x2="1">
-      <stop offset="0" stop-color="#061923" stop-opacity=".10"/>
-      <stop offset=".58" stop-color="#061923" stop-opacity=".02"/>
-      <stop offset=".88" stop-color="#061923" stop-opacity=".48"/>
-      <stop offset="1" stop-color="#061923" stop-opacity=".96"/>
-    </linearGradient>
-    <linearGradient id="tech-card-grad" x1="0" x2="1">
-      <stop offset="0" stop-color="#082332" stop-opacity=".96"/>
-      <stop offset="1" stop-color="#051722" stop-opacity=".99"/>
-    </linearGradient>
-  </defs>
-
-  <g id="technology-native" clip-path="url(#tech-zone-clip)">
-    <rect x="1070" y="68" width="620" height="450" fill="url(#tech-bg-grad)"/>
-
-    <!-- retrato/escena limitada a su propia zona: nunca invade las tarjetas -->
-    <g clip-path="url(#tech-photo-clip)">
-      <image href="assets/it-profile.jpg" x="1010" y="68" width="590" height="445"
-             preserveAspectRatio="xMidYMid slice"/>
-      <rect x="1070" y="68" width="430" height="445" fill="url(#tech-photo-fade)"/>
-    </g>
-
-    <!-- separación visual orgánica, sin caja pegada -->
-    <rect x="1460" y="76" width="212" height="429" fill="#04131d" fill-opacity=".78"/>
-    <rect x="1442" y="76" width="34" height="429" fill="url(#tech-photo-fade)" opacity=".82"/>
-
-    <!-- encabezado integrado -->
-    <text x="1110" y="110" fill="#a8deec" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="600" letter-spacing="1.5">SOLUCIONES QUE IMPULSAN RESULTADOS</text>
-    <text x="1110" y="155" fill="#45d3ff" font-family="Inter,Arial,sans-serif" font-size="39" font-weight="800">TECNOLOGÍA</text>
-    <text x="1110" y="181" fill="#91daec" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" letter-spacing=".5">SISTEMAS · DESARROLLO · REDES · IA</text>
-
-    <!-- rail y conectores, construidos dentro del mismo SVG -->
-    <line x1="1477" y1="116" x2="1477" y2="376" stroke="#4adbff" stroke-opacity=".74" stroke-width="1"/>
-    <g fill="#adf1ff" stroke="#52dcff">
-      <circle cx="1477" cy="124" r="4"/><circle cx="1477" cy="173" r="4"/>
-      <circle cx="1477" cy="222" r="4"/><circle cx="1477" cy="271" r="4"/>
-      <circle cx="1477" cy="320" r="4"/><circle cx="1477" cy="369" r="4"/>
-    </g>
-
-    <!-- tarjetas: columna propia a la derecha, fuera de la cara -->
-    <g font-family="Inter,Arial,sans-serif" font-weight="700" font-size="13" fill="#f2f8fa">
-      <g id="svg-tech-desarrollo">
-        <rect x="1491" y="104" width="161" height="40" rx="11" fill="url(#tech-card-grad)" stroke="#47d3ff" stroke-opacity=".72"/>
-        <text x="1511" y="129">‹/›</text><text x="1544" y="129">DESARROLLO</text>
-      </g>
-      <g id="svg-tech-sistemas">
-        <rect x="1491" y="153" width="161" height="40" rx="11" fill="url(#tech-card-grad)" stroke="#47d3ff" stroke-opacity=".72"/>
-        <text x="1511" y="178">▤</text><text x="1544" y="178">SISTEMAS</text>
-      </g>
-      <g id="svg-tech-redes">
-        <rect x="1491" y="202" width="161" height="40" rx="11" fill="url(#tech-card-grad)" stroke="#47d3ff" stroke-opacity=".72"/>
-        <text x="1511" y="227">⌁</text><text x="1544" y="227">REDES</text>
-      </g>
-      <g id="svg-tech-seguridad">
-        <rect x="1491" y="251" width="161" height="40" rx="11" fill="url(#tech-card-grad)" stroke="#47d3ff" stroke-opacity=".72"/>
-        <text x="1511" y="276">◇</text><text x="1544" y="276">SEGURIDAD</text>
-      </g>
-      <g id="svg-tech-ia">
-        <rect x="1491" y="300" width="161" height="40" rx="11" fill="url(#tech-card-grad)" stroke="#47d3ff" stroke-opacity=".72"/>
-        <text x="1511" y="325">◫</text><text x="1544" y="325">IA &amp; DATA</text>
-      </g>
-      <g id="svg-tech-automatizacion">
-        <rect x="1491" y="349" width="161" height="40" rx="11" fill="url(#tech-card-grad)" stroke="#47d3ff" stroke-opacity=".72"/>
-        <text x="1511" y="374">⚙</text><text x="1544" y="374">AUTOMATIZACIÓN</text>
-      </g>
-    </g>
-
-    <!-- cierre integrado -->
-    <g>
-      <rect x="1388" y="414" width="264" height="67" rx="13" fill="#051923" fill-opacity=".94" stroke="#3bc1eb" stroke-opacity=".62"/>
-      <rect x="1400" y="427" width="3" height="41" rx="2" fill="#42d7ff"/>
-      <text x="1415" y="441" fill="#eef7fa" font-family="Inter,Arial,sans-serif" font-size="11.5">De la estrategia a la implementación.</text>
-      <text x="1415" y="460" fill="#45d9ff" font-family="Inter,Arial,sans-serif" font-size="11.5" font-weight="700">Tecnología al servicio de las personas.</text>
-    </g>
-  </g>
 </svg>
 
 <!-- navegación -->
@@ -402,13 +360,43 @@ dialog h2{font-family:var(--serif);font-weight:700}
   <div class="host-tag" id="hostTag"></div>
 </aside>
 <button class="hotspot" style="left:1.4%;top:40.3%;width:15.1%;height:17.4%" data-open="KPIs" aria-label="KPIs de hostelería"></button>
-<!-- tecnología: el visual está construido dentro del SVG maestro; aquí solo quedan áreas interactivas -->
-<button class="tech-step tech-hotspot" style="left:89.05%;top:11.10%;width:9.55%;height:4.35%" data-tech-step="desarrollo" aria-label="Desarrollo"></button>
-<button class="tech-step tech-hotspot" style="left:89.05%;top:16.30%;width:9.55%;height:4.35%" data-tech-step="sistemas" aria-label="Sistemas"></button>
-<button class="tech-step tech-hotspot" style="left:89.05%;top:21.50%;width:9.55%;height:4.35%" data-tech-step="redes" aria-label="Redes"></button>
-<button class="tech-step tech-hotspot" style="left:89.05%;top:26.70%;width:9.55%;height:4.35%" data-tech-step="seguridad" aria-label="Seguridad"></button>
-<button class="tech-step tech-hotspot" style="left:89.05%;top:31.90%;width:9.55%;height:4.35%" data-tech-step="ia" aria-label="IA y datos"></button>
-<button class="tech-step tech-hotspot" style="left:89.05%;top:37.10%;width:9.55%;height:4.35%" data-tech-step="automatizacion" aria-label="Automatización"></button>
+<!-- tecnología: reconstruida en el hueco real del máster -->
+<section class="tech-zone" aria-label="Tecnología">
+  <header class="tech-copy">
+    <div class="kicker">SOLUCIONES QUE IMPULSAN RESULTADOS</div>
+    <h2>TECNOLOGÍA</h2>
+    <p>SISTEMAS · DESARROLLO · REDES · IA</p>
+  </header>
+
+  <div class="tech-connector" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+
+  <div class="tech-rail">
+    <button class="tech-step" data-tech-step="desarrollo" aria-label="Desarrollo">
+      <svg viewBox="0 0 24 24"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg><span>DESARROLLO</span>
+    </button>
+    <button class="tech-step" data-tech-step="sistemas" aria-label="Sistemas">
+      <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="6" rx="1"/><rect x="4" y="14" width="16" height="6" rx="1"/><path d="M8 7h.01M8 17h.01"/></svg><span>SISTEMAS</span>
+    </button>
+    <button class="tech-step" data-tech-step="redes" aria-label="Redes">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M10.7 7.1 6.3 15.8M13.3 7.1l4.4 8.7M7.5 18h9"/></svg><span>REDES</span>
+    </button>
+    <button class="tech-step" data-tech-step="seguridad" aria-label="Seguridad">
+      <svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 2.8 7.7 7 10 4.2-2.3 7-5.6 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg><span>SEGURIDAD</span>
+    </button>
+    <button class="tech-step" data-tech-step="ia" aria-label="IA y datos">
+      <svg viewBox="0 0 24 24"><path d="M9 4a3 3 0 0 0-3 3v1a3 3 0 0 0-2 3 3 3 0 0 0 2 3v1a3 3 0 0 0 3 3M15 4a3 3 0 0 1 3 3v1a3 3 0 0 1 2 3 3 3 0 0 1-2 3v1a3 3 0 0 1-3 3M9 4v16M15 4v16M9 9h6M9 15h6"/></svg><span>IA &amp; DATA</span>
+    </button>
+    <button class="tech-step" data-tech-step="automatizacion" aria-label="Automatización">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19 13.5v-3l-2-.6a6 6 0 0 0-.7-1.6l1-1.8-2.1-2.1-1.8 1A6 6 0 0 0 11.5 5L11 3H8l-.6 2a6 6 0 0 0-1.6.7L4 4.7 1.9 6.8l1 1.8A6 6 0 0 0 2.2 10L0 10.5v3l2 .6a6 6 0 0 0 .7 1.6l-1 1.8 2.1 2.1 1.8-1a6 6 0 0 0 1.6.7L8 21h3l.6-2a6 6 0 0 0 1.6-.7l1.8 1 2.1-2.1-1-1.8a6 6 0 0 0 .7-1.6l2.2-.3Z"/></svg><span>AUTOMATIZACIÓN</span>
+    </button>
+  </div>
+
+  <div class="tech-quote">
+    <p>De la estrategia a la implementación.<strong>Tecnología al servicio de las personas.</strong></p>
+  </div>
+</section>
 
 <aside class="tech-detail" id="techDetail" aria-live="polite" aria-hidden="true">
   <button class="tech-close" id="techClose" aria-label="Cerrar detalle">×</button>
