@@ -57,9 +57,24 @@ h1 em{font-style:italic;font-weight:500}
 .section-intro{font-size:16px;line-height:1.75;color:#475761;max-width:700px;margin-top:17px}
 
 .manifesto{display:grid;grid-template-columns:1.15fr .85fr;gap:24px}
-.quote-panel{background:var(--navy);color:#fff;padding:54px;min-height:420px;display:flex;flex-direction:column;justify-content:space-between}
-.quote-panel blockquote{font-family:var(--serif);font-size:clamp(32px,3.4vw,54px);line-height:1.08}
-.quote-panel small{color:#b8c4ca;font-size:11px;letter-spacing:.12em}
+.quote-panel{position:relative;isolation:isolate;background:var(--navy);color:#fff;padding:0;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
+.portrait-network{position:relative;aspect-ratio:1.65;min-height:340px;isolation:isolate}
+.network-backdrop{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(9px);opacity:.12;z-index:-2;transform:scale(1.08)}
+.portrait-network:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 48%,rgba(75,183,216,.15),transparent 65%),linear-gradient(180deg,transparent 55%,var(--navy))}
+.network-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.network-portrait{position:absolute;margin:0;left:var(--x);top:var(--y);width:var(--size,21%);aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);border:2px solid var(--ring,#c0d4dc);box-shadow:0 0 0 7px rgba(255,255,255,.035),0 12px 32px rgba(0,0,0,.3)}
+.network-portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:var(--focus,center);border-radius:50%}
+.network-portrait figcaption{position:absolute;left:50%;bottom:-24px;transform:translateX(-50%);white-space:nowrap;color:var(--ring,#c0d4dc);font-size:10px;font-weight:600;letter-spacing:.12em}
+.network-portrait.core{--x:50%;--y:48%;--size:32%;--ring:var(--gold2);--focus:64% 32%;border-width:3px}
+.network-portrait.core:before{content:"";position:absolute;inset:-13px;border:1px dashed rgba(227,200,115,.5);border-radius:50%}
+.network-portrait.host{--x:18%;--y:25%;--ring:var(--gold2);--focus:57% 35%}
+.network-portrait.tech{--x:82%;--y:25%;--ring:var(--blue2);--focus:70% 30%}
+.network-portrait.coach{--x:81%;--y:77%;--ring:var(--green2);--focus:center 28%}
+.network-portrait.work{--x:19%;--y:77%;--size:18%;--focus:30% center}
+.network-caption{position:relative;padding:34px 42px 38px;border-top:1px solid rgba(255,255,255,.09)}
+.quote-panel blockquote{font-family:var(--serif);font-size:clamp(25px,2.2vw,34px);line-height:1.2}
+.quote-panel small{display:block;margin-top:22px;color:#b8c4ca;font-size:10px;letter-spacing:.12em;line-height:1.6}
+@media(max-width:720px){.portrait-network{min-height:0;aspect-ratio:1.12}.network-portrait{--size:24%}.network-portrait.core{--size:34%}.network-portrait.work{--size:21%}.network-portrait figcaption{font-size:8px;letter-spacing:.05em;bottom:-21px}.network-caption{padding:30px 26px}.quote-panel blockquote{font-size:27px}}
 .manifesto-side{display:grid;gap:24px}
 .info-card{background:var(--paper2);border:1px solid var(--line);padding:32px}
 .info-card span{font-size:10px;letter-spacing:.16em;font-weight:700;color:var(--gold)}.info-card h3{font-size:27px;margin:10px 0 8px}.info-card p{font-size:13px;line-height:1.65;color:var(--mut)}
@@ -116,7 +131,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 38px;display:flex;justify
  .shell{width:min(92vw,720px)}.header-in{height:68px}.brand b{font-size:10px}.brand small{display:none}.nav.open{top:68px}
  .hero{padding-top:35px}.hero h1{font-size:48px}.hero-meta{grid-template-columns:1fr}.hero-meta div+div{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:15px}
  .portrait-wrap{padding:18px 18px 0 18px}.portrait-frame{min-height:520px}.portrait-label{left:0;bottom:18px;width:86%}.axis{right:4px;top:18px}
- .section{padding:72px 0}.section-head{gap:20px}.quote-panel{padding:34px;min-height:350px}.info-card{padding:24px}
+ .section{padding:72px 0}.section-head{gap:20px}.info-card{padding:24px}
  .timeline{grid-template-columns:1fr}.timeline article+article{border-left:0;border-top:1px solid var(--line)}
  .method-grid{grid-template-columns:1fr}.step:last-child{grid-column:auto}.project-grid{grid-template-columns:1fr}.project{grid-template-columns:82px 1fr}.docs{grid-template-columns:1fr}
  .cluster-film{aspect-ratio:auto}.cluster-video{height:auto;aspect-ratio:1440/690}.cluster-links{grid-template-columns:1fr}.cluster-link{padding:22px 24px}.cluster-link+.cluster-link{border-left:0;border-top:1px solid rgba(255,255,255,.12)}.cluster-link p{max-width:none}.cluster-toggle{position:static;margin:4px 16px 16px;padding:8px 12px;font-size:11px}
@@ -162,7 +177,21 @@ footer{border-top:1px solid var(--line);padding:22px 0 38px;display:flex;justify
 <section class="section shell reveal" id="vision">
   <div class="section-head"><div class="section-index">01 / VISIÓN</div><div><h2>Una visión. Tres disciplinas.</h2><p class="section-intro">Mi perfil no funciona por compartimentos. Dirección, sistemas y rendimiento comparten una misma disciplina: entender el contexto, ordenar los recursos y convertir complejidad en resultados medibles.</p></div></div>
   <div class="manifesto">
-    <div class="quote-panel"><blockquote>“No separo personas, procesos y tecnología. Los diseño para que funcionen como un único sistema.”</blockquote><small>RAMÓN A. CURBALÁN VEGA · HUMAN · SYSTEMS · PERFORMANCE</small></div>
+    <div class="quote-panel">
+      <div class="portrait-network" role="group" aria-label="Ramón A. Curbalán Vega: una visión profesional que conecta dirección, hostelería, tecnología y rendimiento humano">
+        <img class="network-backdrop" src="assets/ramon-trabajo.webp" alt="" loading="lazy" aria-hidden="true">
+        <svg class="network-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <g fill="none" stroke-width=".18"><path d="M18 25L50 48" stroke="#e3c873"/><path d="M82 25L50 48" stroke="#4bb7d8"/><path d="M81 77L50 48" stroke="#75b888"/><path d="M19 77L50 48" stroke="#a8c3d0"/><path d="M18 25L19 77L81 77L82 25L18 25" stroke="#90a6b4" stroke-dasharray=".5 1" opacity=".4"/></g>
+          <g fill="#a8c3d0" opacity=".35"><circle cx="5" cy="12" r=".7"/><circle cx="40" cy="10" r=".45"/><circle cx="94" cy="52" r=".7"/><circle cx="48" cy="90" r=".5"/></g>
+        </svg>
+        <figure class="network-portrait core"><img src="assets/ramon-direccion.webp" alt="Ramón A. Curbalán Vega en un entorno profesional" loading="lazy" width="1200" height="800"></figure>
+        <figure class="network-portrait host"><img src="assets/ramon-hospitality.webp" alt="Ramón en un restaurante" loading="lazy"><figcaption>HOSPITALITY</figcaption></figure>
+        <figure class="network-portrait tech"><img src="assets/ramon-technology.webp" alt="Ramón junto a sistemas informáticos" loading="lazy"><figcaption>TECHNOLOGY</figcaption></figure>
+        <figure class="network-portrait coach"><img src="assets/ramon-perfil-coach.webp" alt="Ramón en un espacio de entrenamiento" loading="lazy"><figcaption>PERFORMANCE</figcaption></figure>
+        <figure class="network-portrait work"><img src="assets/ramon-trabajo.webp" alt="Ramón trabajando con un ordenador" loading="lazy"><figcaption>OPERATIONS</figcaption></figure>
+      </div>
+      <div class="network-caption"><blockquote>“No separo personas, procesos y tecnología. Los diseño para que funcionen como un único sistema.”</blockquote><small>RAMÓN A. CURBALÁN VEGA · HUMAN · SYSTEMS · PERFORMANCE</small></div>
+    </div>
     <div class="manifesto-side">
       <article class="info-card"><span>OPERATIONS</span><h3>Dirección y servicio</h3><p>Planificación, coordinación interdepartamental, experiencia del cliente, estándares 5★/5★ GL, recursos, costes y ejecución.</p></article>
       <article class="info-card"><span>SYSTEMS</span><h3>Tecnología aplicada</h3><p>Desarrollo, redes, seguridad, IA y automatización orientadas a resolver problemas reales y reducir fricción operativa.</p></article>
