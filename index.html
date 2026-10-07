@@ -81,15 +81,21 @@ h1 em{font-style:italic;font-weight:500}
 .method-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
 .step{background:var(--paper2);border:1px solid var(--line);padding:28px;min-height:230px}.step .n{font-family:var(--serif);font-size:32px;color:#aa9560}.step b{display:block;margin:34px 0 10px;font-size:11px;letter-spacing:.12em}.step p{font-size:12px;line-height:1.6;color:var(--mut)}
 
-.cluster-stage{position:relative;min-height:690px;background:var(--navy);overflow:hidden}
-.cluster-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:60px 60px}
-.cluster-head{position:absolute;left:42px;top:38px;color:#fff;z-index:2}.cluster-head small{display:block;color:#90a6b4;font-size:10px;letter-spacing:.16em;margin-bottom:8px}.cluster-head h3{font-size:32px}
-.hub{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);width:270px;height:270px;border-radius:50%;border:1px solid rgba(227,200,115,.55);display:grid;place-items:center;color:#fff;text-align:center;box-shadow:0 0 0 26px rgba(255,255,255,.025),0 0 90px rgba(227,200,115,.12)}
-.hub:before{content:"";position:absolute;inset:24px;border-radius:50%;border:1px solid rgba(255,255,255,.14)}.hub strong{font-family:var(--serif);font-size:27px;line-height:1.08}.hub span{display:block;font-family:var(--sans);font-size:9px;letter-spacing:.16em;color:#9fb1bb;margin-top:8px}
-.node{position:absolute;width:225px;padding:24px;background:rgba(244,240,232,.96);border:1px solid rgba(255,255,255,.22);transition:.25s;text-decoration:none;z-index:3}.node:hover{transform:translateY(-5px)}
-.node b{font-family:var(--serif);font-size:22px;display:block}.node small{display:block;font-size:9px;letter-spacing:.12em;margin:5px 0 14px}.node p{font-size:11px;line-height:1.55;color:#5d6d78}
-.node.host{left:7%;top:33%;border-top:5px solid var(--gold)}.node.tech{right:7%;top:26%;border-top:5px solid var(--blue)}.node.sport{right:12%;bottom:8%;border-top:5px solid var(--green)}
-.line{position:absolute;height:1px;background:rgba(255,255,255,.17);transform-origin:left center}.line.one{width:31%;left:20%;top:45%;transform:rotate(7deg)}.line.two{width:31%;left:51%;top:45%;transform:rotate(-13deg)}.line.three{width:28%;left:51%;top:57%;transform:rotate(28deg)}
+.cluster-stage{background:#102430;color:#fff;border:1px solid rgba(15,27,37,.12)}
+.cluster-film{position:relative;aspect-ratio:1440/690;overflow:hidden}
+.cluster-video{display:block;width:100%;height:100%;object-fit:contain;background:#102430}
+.cluster-toggle{position:absolute;right:18px;bottom:18px;min-height:44px;padding:10px 16px;border:1px solid rgba(255,255,255,.28);border-radius:3px;background:rgba(10,28,39,.9);color:#fff;font:500 12px var(--sans);cursor:pointer;transition:background .2s}
+.cluster-toggle:hover{background:#1c3c4d}.cluster-toggle:focus-visible,.cluster-link:focus-visible{outline:2px solid var(--gold2);outline-offset:-4px}
+.cluster-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.12)}
+.cluster-link{position:relative;padding:24px 28px;color:#fff;text-decoration:none;transition:background .2s}
+.cluster-link+.cluster-link{border-left:1px solid rgba(255,255,255,.12)}
+.cluster-link:hover{background:rgba(255,255,255,.045)}
+.cluster-link b{display:flex;align-items:center;justify-content:space-between;gap:12px;font:500 23px var(--serif)}
+.cluster-link b span{font:400 18px var(--sans);color:var(--accent)}
+.cluster-link small{display:block;margin:7px 0 12px;color:var(--accent);font-size:10px;letter-spacing:.14em}
+.cluster-link p{max-width:330px;font-size:13px;line-height:1.65;color:#b9c8d0}
+.cluster-link.host{--accent:var(--gold2)}.cluster-link.tech{--accent:var(--blue2)}.cluster-link.sport{--accent:var(--green2)}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
 
 .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.project{display:grid;grid-template-columns:120px 1fr;border:1px solid var(--line);background:var(--paper2);min-height:190px;text-decoration:none}.project .code{display:grid;place-items:center;background:var(--navy);color:var(--gold2);font-family:var(--serif);font-size:27px}.project .copy{padding:28px}.project h3{font-size:27px}.project p{margin-top:7px;font-size:12px;line-height:1.6;color:var(--mut)}.project span{display:block;margin-top:24px;font-size:11px;font-weight:700}
 .skills{display:flex;flex-wrap:wrap;gap:8px}.skills span{padding:10px 13px;border:1px solid var(--line);background:var(--paper2);font-size:10px;font-weight:700;letter-spacing:.09em}
@@ -113,7 +119,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 38px;display:flex;justify
  .section{padding:72px 0}.section-head{gap:20px}.quote-panel{padding:34px;min-height:350px}.info-card{padding:24px}
  .timeline{grid-template-columns:1fr}.timeline article+article{border-left:0;border-top:1px solid var(--line)}
  .method-grid{grid-template-columns:1fr}.step:last-child{grid-column:auto}.project-grid{grid-template-columns:1fr}.project{grid-template-columns:82px 1fr}.docs{grid-template-columns:1fr}
- .cluster-stage{min-height:860px}.hub{width:220px;height:220px;top:48%}.node{width:76%;left:12%!important;right:auto!important}.node.host{top:15%}.node.tech{top:61%}.node.sport{bottom:4%}.line{display:none}
+ .cluster-film{aspect-ratio:auto}.cluster-video{height:auto;aspect-ratio:1440/690}.cluster-links{grid-template-columns:1fr}.cluster-link{padding:22px 24px}.cluster-link+.cluster-link{border-left:0;border-top:1px solid rgba(255,255,255,.12)}.cluster-link p{max-width:none}.cluster-toggle{position:static;margin:4px 16px 16px;padding:8px 12px;font-size:11px}
  .contact{padding:42px 28px}
 }
 </style>
@@ -213,15 +219,21 @@ footer{border-top:1px solid var(--line);padding:22px 0 38px;display:flex;justify
 </section>
 
 <section class="section shell reveal">
-  <div class="section-head"><div class="section-index">05 / CLUSTER</div><div><h2>Human · Systems · Performance</h2><p class="section-intro">El núcleo visual del portfolio sigue presente, ahora construido como interfaz web: tres áreas conectadas alrededor de una misma lógica de dirección.</p></div></div>
+  <div class="section-head"><div class="section-index">05 / CLUSTER</div><div><h2>Human · Systems · Performance</h2><p class="section-intro">Tres áreas conectadas alrededor de una misma lógica de dirección: personas, procesos y sistemas que trabajan en la misma dirección.</p></div></div>
   <div class="cluster-stage">
-    <div class="cluster-grid"></div>
-    <div class="cluster-head"><small>PROFESSIONAL OPERATING SYSTEM</small><h3>Una sola arquitectura profesional.</h3></div>
-    <div class="hub"><div><strong>Ramón A.<br>Curbalán Vega</strong><span>PEOPLE · PROCESS · SYSTEMS</span></div></div>
-    <a class="node host" href="https://raymonchu48.github.io/Portfolio_Hosteleria/"><b>Hospitality</b><small>01 · OPERATIONS</small><p>Servicio, liderazgo, eventos, logística, costes y experiencia.</p></a>
-    <a class="node tech" href="https://raymonchu48.github.io/Portfolio/"><b>Technology</b><small>02 · SYSTEMS</small><p>Desarrollo, redes, seguridad, datos, IA y automatización.</p></a>
-    <a class="node sport" href="https://raymonchu48.github.io/Deportivo/"><b>Performance</b><small>03 · HUMAN</small><p>Entrenamiento, nutrición, hábitos y rendimiento sostenible.</p></a>
-    <span class="line one"></span><span class="line two"></span><span class="line three"></span>
+    <div class="cluster-film">
+      <h3 class="visually-hidden">Una sola arquitectura profesional.</h3>
+      <video class="cluster-video" id="cluster-video" width="1440" height="690" muted loop playsinline controls preload="metadata" poster="assets/arquitectura-tres-planetas-poster.jpg" aria-label="Arquitectura profesional de Ramón A. Curbalán Vega: Hospitality, Technology y Performance orbitan alrededor de personas, procesos y sistemas.">
+        <source src="assets/arquitectura-tres-planetas-lento.mp4" type="video/mp4">
+        <p><a href="assets/arquitectura-tres-planetas-lento.mp4">Ver la animación de la arquitectura profesional.</a></p>
+      </video>
+      <button class="cluster-toggle" id="cluster-toggle" type="button" aria-controls="cluster-video" hidden>Reproducir animación</button>
+    </div>
+    <nav class="cluster-links" aria-label="Explorar las tres áreas profesionales">
+      <a class="cluster-link host" href="https://raymonchu48.github.io/Portfolio_Hosteleria/"><b>Hospitality <span aria-hidden="true">↗</span></b><small>01 · OPERATIONS</small><p>Servicio, liderazgo, eventos, logística, costes y experiencia.</p></a>
+      <a class="cluster-link tech" href="https://raymonchu48.github.io/Portfolio/"><b>Technology <span aria-hidden="true">↗</span></b><small>02 · SYSTEMS</small><p>Desarrollo, redes, seguridad, datos, IA y automatización.</p></a>
+      <a class="cluster-link sport" href="https://raymonchu48.github.io/Deportivo/"><b>Performance <span aria-hidden="true">↗</span></b><small>03 · HUMAN</small><p>Entrenamiento, nutrición, hábitos y rendimiento sostenible.</p></a>
+    </nav>
   </div>
 </section>
 
@@ -263,6 +275,36 @@ menu?.addEventListener('click',()=>nav.classList.toggle('open'));
 nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const clusterVideo=document.getElementById('cluster-video');
+const clusterToggle=document.getElementById('cluster-toggle');
+const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+let clusterVisible=false;
+let clusterPausedByUser=reducedMotion.matches;
+clusterVideo.controls=false;
+clusterToggle.hidden=false;
+const updateClusterToggle=()=>{clusterToggle.textContent=clusterVideo.paused?'Reproducir animación':'Pausar animación';};
+const syncClusterPlayback=()=>{
+  if(clusterVisible&&!document.hidden&&!clusterPausedByUser){
+    clusterVideo.play().catch(updateClusterToggle);
+  }else{clusterVideo.pause();}
+};
+clusterVideo.addEventListener('play',updateClusterToggle);
+clusterVideo.addEventListener('pause',updateClusterToggle);
+clusterVideo.addEventListener('error',()=>{clusterToggle.hidden=true;});
+clusterToggle.addEventListener('click',()=>{
+  clusterPausedByUser=!clusterVideo.paused;
+  syncClusterPlayback();
+});
+const clusterObserver=new IntersectionObserver(entries=>{
+  clusterVisible=entries[0].isIntersecting;
+  syncClusterPlayback();
+},{threshold:.15});
+clusterObserver.observe(clusterVideo);
+document.addEventListener('visibilitychange',syncClusterPlayback);
+reducedMotion.addEventListener('change',event=>{
+  clusterPausedByUser=event.matches;
+  syncClusterPlayback();
+});
 </script>
 </body>
 </html>
