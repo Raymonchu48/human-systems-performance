@@ -87,7 +87,9 @@ h1 em{font-style:italic;font-weight:500}
 .dnum{font-size:10px;font-weight:700;letter-spacing:.16em}.host .dnum{color:var(--gold)}.tech .dnum{color:var(--blue)}.sport .dnum{color:var(--green)}
 .division h3{font-size:34px;line-height:1.05;margin:14px 0 6px}.division h4{font-size:10px;letter-spacing:.13em;color:var(--mut);margin-bottom:26px}
 .division ul{list-style:none;border-top:1px solid var(--line)}.division li{padding:13px 0;border-bottom:1px solid var(--line);font-size:13px;line-height:1.5;color:#44545f}.division li b{display:block;color:var(--ink);font-size:12px;margin-bottom:2px}
-.division a{margin-top:auto;padding-top:22px;text-decoration:none;font-size:12px;font-weight:700;display:flex;justify-content:space-between}
+.division.host{--button-bg:#e3c873;--button-hover:#d5b65a;--button-ink:#0f1b25}.division.tech{--button-bg:#126b88;--button-hover:#0e566e;--button-ink:#fff}.division.sport{--button-bg:#286a3e;--button-hover:#205632;--button-ink:#fff}
+.division a{margin-top:auto;position:relative;top:16px;width:100%;min-height:48px;padding:14px 18px;background:var(--button-bg);color:var(--button-ink);border:1px solid transparent;border-radius:3px;text-decoration:none;font-size:13px;font-weight:700;line-height:1.4;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background .2s,box-shadow .2s}
+.division a:hover{background:var(--button-hover);box-shadow:0 4px 12px rgba(15,27,37,.12)}.division a:focus-visible{outline:3px solid var(--ink);outline-offset:4px}.division a span{font-size:19px;line-height:1}
 
 .timeline{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
 .timeline article{padding:30px 28px;min-height:245px}.timeline article+article{border-left:1px solid var(--line)}
@@ -208,21 +210,21 @@ footer{border-top:1px solid var(--line);padding:22px 0 38px;display:flex;justify
       <li><b>Recursos</b>Staffing por picos, compras, inventarios, barras, menaje y BOH.</li>
       <li><b>Ejecución</b>Coordinación cocina–sala–eventos–recepción y servicio minuto a minuto.</li>
       <li><b>Control</b>Calidad, satisfacción, consumos, incidencias, costes y aprendizaje operativo.</li>
-    </ul><a href="https://raymonchu48.github.io/Portfolio_Hosteleria/">Abrir portfolio Hostelería <span>→</span></a></div></article>
+    </ul><a href="https://raymonchu48.github.io/Portfolio_Hosteleria/">Explorar Hostelería <span aria-hidden="true">↗</span></a></div></article>
 
     <article class="division tech"><div class="division-in"><div class="dnum">02 — TECNOLOGÍA · SYSTEMS</div><h3>Systems & Data</h3><h4>DESARROLLO · REDES · SEGURIDAD · IA</h4><ul>
       <li><b>Desarrollo</b>Frontend, lógica, integraciones y productos digitales responsive.</li>
       <li><b>Sistemas</b>Windows/Linux, virtualización, servicios y despliegue.</li>
       <li><b>Redes & Seguridad</b>NAT, VPN, diagnóstico, hardening, backup y continuidad.</li>
       <li><b>IA & Automatización</b>Indicadores, asistentes y flujos orientados a tareas concretas.</li>
-    </ul><a href="https://raymonchu48.github.io/Portfolio/">Abrir portfolio Tecnología <span>→</span></a></div></article>
+    </ul><a href="https://raymonchu48.github.io/Portfolio/">Explorar Tecnología <span aria-hidden="true">↗</span></a></div></article>
 
     <article class="division sport"><div class="division-in"><div class="dnum">03 — DEPORTE · PERFORMANCE</div><h3>Human Performance</h3><h4>ENTRENAMIENTO · NUTRICIÓN · BIENESTAR</h4><ul>
       <li><b>Movimiento</b>Entrenamiento estructurado, progresión y técnica.</li>
       <li><b>Nutrición</b>Planificación alimentaria práctica, sostenible y contextualizada.</li>
       <li><b>Recuperación</b>Sueño, hábitos y continuidad como parte del rendimiento.</li>
       <li><b>Seguimiento</b>Ajuste, adherencia y mejora continua sin soluciones aisladas.</li>
-    </ul><a href="https://raymonchu48.github.io/Deportivo/">Abrir portfolio Deportivo <span>→</span></a></div></article>
+    </ul><a href="https://raymonchu48.github.io/Deportivo/">Explorar Deporte <span aria-hidden="true">↗</span></a></div></article>
   </div>
 </section>
 
