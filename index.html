@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f4f0e8">
+<meta name="theme-color" content="#edf0ef">
 <meta name="description" content="Portfolio integral de Ramón A. Curbalán Vega: hostelería, tecnología y rendimiento humano.">
 <title>Ramón A. Curbalán Vega — Human · Systems · Performance</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,8 +12,8 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
- --paper:#f4f0e8;--paper2:#fbfaf6;--ink:#0f1b25;--mut:#60707b;--line:#d8cfbf;--navy:#0e2230;
- --gold:#b6953e;--gold2:#e3c873;--blue:#177ea0;--blue2:#4bb7d8;--green:#2f7a49;--green2:#75b888;
+ --paper:#edf0ef;--paper2:#f8f9f7;--ink:#283337;--mut:#58676c;--line:#d3dad8;--navy:#33464e;
+ --gold:#806c46;--gold2:#d9c9a7;--blue:#466778;--blue2:#9bb4c1;--green:#4e6a57;--green2:#a7bdab;
  --serif:"Fraunces",Georgia,serif;--sans:"Inter",system-ui,sans-serif
 }
 html{scroll-behavior:smooth}
@@ -144,6 +144,45 @@ footer{border-top:1px solid var(--line);padding:22px 0 38px;display:flex;justify
 }
 
 .case-section{margin-top:54px}.case-heading{margin-bottom:24px}.case-heading h3{font-size:32px;margin:12px 0}.case-heading p{font-size:14px;line-height:1.6;color:var(--mut);max-width:760px}.case-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.case-card{display:grid;grid-template-columns:140px minmax(0,1fr);background:var(--paper2);border:1px solid var(--line);border-top:4px solid var(--case-color);text-decoration:none;transition:box-shadow .2s}.case-card:hover{box-shadow:0 12px 30px rgba(15,27,37,.09)}.case-card:focus-visible{outline:3px solid var(--case-color);outline-offset:4px}.case-cover{padding:20px 14px;background:#eae6dd;display:flex;align-items:flex-start}.case-cover img{display:block;width:100%;height:auto;border:1px solid #d8cfbf}.case-copy{padding:25px}.case-copy small{font-size:9px;letter-spacing:.12em;color:var(--case-color);font-weight:700}.case-copy h3{font-size:25px;line-height:1.15;margin:12px 0}.case-copy p{font-size:13px;line-height:1.65;color:var(--mut)}.case-copy .case-status{font-size:11px;margin-top:15px}.case-copy span{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px;padding:13px 15px;background:var(--navy);color:#fff;font-size:11px;font-weight:700;min-height:44px}@media(max-width:720px){.case-grid{grid-template-columns:1fr}.case-card{grid-template-columns:82px minmax(0,1fr)}.case-cover{padding:16px 8px}.case-copy{padding:20px}.case-copy h3{font-size:23px}}
+
+/* Stone and pearl: sculpted surfaces, subtle discipline line drawings. */
+body{background:linear-gradient(125deg,#e7eceb 0%,#f5f6f3 52%,#edf0ef 100%)}
+.header{background:rgba(242,245,242,.94);border-color:var(--line)}
+.mark,.header-cta,.btn,.portrait-frame,.portrait-label,.info-card,.division,.step,.project,.doc,.case-card,.quote-panel,.contact,.cluster-stage{border-radius:12px}
+.portrait-frame{box-shadow:16px 20px 38px rgba(50,66,65,.18),-9px -9px 25px rgba(255,255,255,.85)}
+.portrait-label,.info-card,.division,.step,.project,.doc,.case-card{background:linear-gradient(135deg,#fbfcfa,#e9eeeb);border-color:rgba(255,255,255,.85);box-shadow:9px 12px 25px rgba(60,76,73,.1),-7px -7px 20px rgba(255,255,255,.85)}
+.division:hover,.project:hover,.doc:hover,.case-card:hover{box-shadow:12px 17px 30px rgba(60,76,73,.16),-8px -8px 22px #fff}
+.division:before{height:3px;opacity:.6}
+.division.host{--button-bg:#d9c9a7;--button-hover:#cbb98f;--button-ink:#283337}
+.division.tech{--button-bg:#466778;--button-hover:#385563;--button-ink:#fff}
+.division.sport{--button-bg:#4e6a57;--button-hover:#405947;--button-ink:#fff}
+.discipline-drawing{display:block;width:100%;height:112px;margin:0 0 24px;filter:drop-shadow(1px 2px 1px #fff)}
+.host .discipline-drawing{color:#998560}.tech .discipline-drawing{color:#718f9d}.sport .discipline-drawing{color:#7b9580}
+.quote-panel,.contact{background:linear-gradient(135deg,#f9faf7,#e1e7e3);color:var(--ink);border:1px solid #fff;box-shadow:12px 16px 32px rgba(60,76,73,.13),-8px -8px 24px #fff}
+.network-backdrop{opacity:.04}
+.portrait-network:before{background:radial-gradient(ellipse at 50% 48%,#fff9,transparent 65%),linear-gradient(180deg,transparent 65%,#e5eae6)}
+.network-portrait{box-shadow:0 0 0 7px #f7f9f580,9px 13px 21px #3c4c492e,-6px -6px 17px #fff}
+.network-portrait.core:before{border-color:#9d8960}
+.network-portrait figcaption{color:var(--ink)}
+.network-caption{border-color:var(--line)}
+.quote-panel small,.contact p{color:var(--mut)}
+.contact .section-index{color:var(--mut)!important}
+.contact-visual img{border-radius:8px;border-color:var(--line)}
+.cluster-stage{background:var(--paper2);color:var(--ink);overflow:hidden;box-shadow:10px 14px 30px #3c4c491c,-8px -8px 24px #fff}
+.cluster-links,.cluster-link+.cluster-link{border-color:var(--line)}
+.cluster-link{color:var(--ink);background:linear-gradient(135deg,#fafbf8,#e7ece8)}
+.cluster-link:hover{background:#fff}
+.cluster-link p{color:var(--mut)}
+.cluster-link.host{--accent:var(--gold)}.cluster-link.tech{--accent:var(--blue)}.cluster-link.sport{--accent:var(--green)}
+.project{overflow:hidden}.project .code{background:linear-gradient(135deg,#e0e7e2,#f6f8f4);color:var(--ink);border-right:1px solid var(--line)}
+.case-cover{background:#e4eae6}.case-cover img{border-color:var(--line)}
+.step .n{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;font-size:27px;color:var(--gold);background:linear-gradient(135deg,#fff,#dde4df);box-shadow:5px 7px 12px #3c4c491c,-4px -4px 12px #fff}
+.skills span{border-radius:20px;background:#f3f6f1}
+.btn.light{background:#f4f7f2;box-shadow:4px 5px 12px #3c4c4912,-4px -4px 12px #fff;border-color:#b8c4bd}
+a:focus-visible,button:focus-visible{outline:3px solid #466778;outline-offset:4px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.division{transition:none}.division:hover{transform:none}}
+@media(max-width:720px){.discipline-drawing{height:96px;margin-bottom:20px}.info-card,.step,.division,.project,.doc{box-shadow:5px 7px 16px #3c4c4914,-4px -4px 14px #fff}}
+
 </style>
 </head>
 <body>
@@ -211,21 +250,21 @@ footer{border-top:1px solid var(--line);padding:22px 0 38px;display:flex;justify
 <section class="section shell reveal" id="areas">
   <div class="section-head"><div class="section-index">02 / ÁREAS</div><div><h2>Tres áreas. Una misma forma de trabajar.</h2><p class="section-intro">Cada división mantiene identidad propia, pero comparte metodología, exigencia y orientación a resultados.</p></div></div>
   <div class="divisions">
-    <article class="division host"><div class="division-in"><div class="dnum">01 — HOSTELERÍA · F&B</div><h3>Hospitality Operations</h3><h4>EVENTOS · BANQUETES · EQUIPOS · KPI</h4><ul>
+    <article class="division host"><div class="division-in"><svg class="discipline-drawing" viewBox="0 0 240 124" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M25 95V39a25 25 0 0 1 50 0v56M165 95V39a25 25 0 0 1 50 0v56M17 95h206M46 77q74-17 148 0l12 20H34Z M51 97v14m138-14v14M88 69V44m-9 0h18m-18-18h18v9a9 9 0 0 1-18 0ZM146 69V44m-9 0h18m-18-18h18v9a9 9 0 0 1-18 0ZM115 64V29m-7 35h14m-10-44q-4-6 4-11 6 6 0 11M104 79q15-5 30 0"/></g></svg><div class="dnum">01 — HOSTELERÍA · F&B</div><h3>Hospitality Operations</h3><h4>EVENTOS · BANQUETES · EQUIPOS · KPI</h4><ul>
       <li><b>Planificación</b>BEO, layouts, cronogramas, volúmenes, timings y puntos críticos.</li>
       <li><b>Recursos</b>Staffing por picos, compras, inventarios, barras, menaje y BOH.</li>
       <li><b>Ejecución</b>Coordinación cocina–sala–eventos–recepción y servicio minuto a minuto.</li>
       <li><b>Control</b>Calidad, satisfacción, consumos, incidencias, costes y aprendizaje operativo.</li>
     </ul><a href="https://raymonchu48.github.io/Portfolio_Hosteleria/">Explorar Hostelería <span aria-hidden="true">↗</span></a></div></article>
 
-    <article class="division tech"><div class="division-in"><div class="dnum">02 — TECNOLOGÍA · SYSTEMS</div><h3>Systems & Data</h3><h4>DESARROLLO · REDES · SEGURIDAD · IA</h4><ul>
+    <article class="division tech"><div class="division-in"><svg class="discipline-drawing" viewBox="0 0 240 124" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="94" y="36" width="51" height="45" rx="7"/><rect x="105" y="47" width="29" height="23" rx="3"/><path d="M94 48H68V23H36M94 68H53v29H27M145 48h26V23h34M145 68h43v29h25M108 36V15m15 21V9m12 27V18M108 81v25m15-25v32m12-32v25M40 59h39m82 0h39"/><circle cx="31" cy="23" r="5"/><circle cx="22" cy="97" r="5"/><circle cx="210" cy="23" r="5"/><circle cx="218" cy="97" r="5"/><circle cx="35" cy="59" r="4"/><circle cx="205" cy="59" r="4"/></g></svg><div class="dnum">02 — TECNOLOGÍA · SYSTEMS</div><h3>Systems & Data</h3><h4>DESARROLLO · REDES · SEGURIDAD · IA</h4><ul>
       <li><b>Desarrollo</b>Frontend, lógica, integraciones y productos digitales responsive.</li>
       <li><b>Sistemas</b>Windows/Linux, virtualización, servicios y despliegue.</li>
       <li><b>Redes & Seguridad</b>NAT, VPN, diagnóstico, hardening, backup y continuidad.</li>
       <li><b>IA & Automatización</b>Indicadores, asistentes y flujos orientados a tareas concretas.</li>
     </ul><a href="https://raymonchu48.github.io/Portfolio/">Explorar Tecnología <span aria-hidden="true">↗</span></a></div></article>
 
-    <article class="division sport"><div class="division-in"><div class="dnum">03 — DEPORTE · PERFORMANCE</div><h3>Human Performance</h3><h4>ENTRENAMIENTO · NUTRICIÓN · BIENESTAR</h4><ul>
+    <article class="division sport"><div class="division-in"><svg class="discipline-drawing" viewBox="0 0 240 124" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="m12 99 41-45 20 21 33-43 32 39 19-17 70 45M39 70l14 7 7-4M85 59l21-27 18 29M20 110h199"/><circle cx="142" cy="23" r="9"/><path d="m138 35-19 22 26 18-15 28M132 43l20 12 24-7M123 53l-21-1-13 15M144 74l22 8 22 20"/></g></svg><div class="dnum">03 — DEPORTE · PERFORMANCE</div><h3>Human Performance</h3><h4>ENTRENAMIENTO · NUTRICIÓN · BIENESTAR</h4><ul>
       <li><b>Movimiento</b>Entrenamiento estructurado, progresión y técnica.</li>
       <li><b>Nutrición</b>Planificación alimentaria práctica, sostenible y contextualizada.</li>
       <li><b>Recuperación</b>Sueño, hábitos y continuidad como parte del rendimiento.</li>
