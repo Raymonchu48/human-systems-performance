@@ -206,7 +206,7 @@ main::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none
 
 .experience-profile-action{display:flex;justify-content:center;padding:35px 0 0}.experience-profile-action .btn{min-width:240px;gap:15px;transition:transform .25s ease,box-shadow .25s ease}.experience-profile-action .btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(8,21,30,.16)}@media(prefers-reduced-motion:reduce){.experience-profile-action .btn{transition:none}.experience-profile-action .btn:hover{transform:none}}
 </style>
-<style>.language-switch{position:fixed;right:16px;bottom:16px;z-index:999;display:flex;gap:10px;align-items:center;padding:9px 13px;background:#f8f9f7;color:#283337;border:1px solid #aebbb6;border-radius:6px;font:700 12px Arial,sans-serif;box-shadow:0 3px 12px #18303920}.language-switch a{color:inherit;text-decoration:underline}.language-switch a:focus-visible{outline:2px solid #466778;outline-offset:3px}</style></head>
+<style id="header-language-style">.header-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}.header-in{gap:16px}.header-actions .language-switch{position:static;display:flex;align-items:center;gap:4px;margin:0;padding:4px;background:#f8f9f7;color:#283337;border:1px solid #bbc6c1;border-radius:9px;font:700 12px Arial,sans-serif}.language-switch a,.language-switch>span{display:flex;align-items:center;gap:6px;padding:7px 8px;border-radius:5px;text-decoration:none}.language-switch [aria-current="page"]{background:#e0e7e2}.language-switch a:hover{background:#edf1ee}.language-switch a:focus-visible{outline:2px solid #466778;outline-offset:2px}.language-flag{width:22px;height:15px;border:1px solid #0002;border-radius:2px;flex-shrink:0}@media(max-width:1320px){.nav{display:none}.menu{display:block}.nav.open{display:flex;position:absolute;right:3vw;top:76px;flex-direction:column;align-items:flex-start;background:var(--paper2);border:1px solid var(--line);padding:20px;width:240px}.nav.open .academic-mobile{display:block}}@media(max-width:600px){.header-in{gap:8px}.header-actions{gap:0}.header-actions .language-switch{font-size:11px}.language-switch a,.language-switch>span{padding:6px;gap:4px}.language-flag{width:19px;height:13px}.nav.open{top:68px}}</style></head>
 <body>
 <header class="header">
   <div class="shell header-in">
@@ -215,7 +215,7 @@ main::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none
       <a href="#vision">VISIÓN</a><a href="#areas">ÁREAS</a><a href="#experiencia">EXPERIENCIA</a><a href="#metodo">MÉTODO</a><a href="#portfolios">PORTFOLIOS</a><a href="#proyectos">PROYECTOS</a>
       <a class="academic-mobile" href="assets/perfil-academico-ramon-curbalan.pdf" target="_blank" rel="noopener">PERFIL ACADÉMICO ↗</a>
     </nav>
-    <a class="header-cta" href="assets/perfil-academico-ramon-curbalan.pdf" target="_blank" rel="noopener" aria-label="Perfil académico, PDF en una nueva pestaña">Perfil académico ↗</a>
+    <div class="header-actions"><a class="header-cta" href="assets/perfil-academico-ramon-curbalan.pdf" target="_blank" rel="noopener" aria-label="Perfil académico, PDF en una nueva pestaña">Perfil académico ↗</a><nav class="language-switch" aria-label="Idioma"><span aria-current="page" aria-label="Español"><svg class="language-flag" viewBox="0 0 24 16" aria-hidden="true"><path fill="#aa151b" d="M0 0h24v16H0z"/><path fill="#f1bf00" d="M0 4h24v8H0z"/><path fill="#aa151b" d="M6 6h3v4H6z"/></svg>ES</span><a href="en/index.html" lang="en" hreflang="en" aria-label="English"><svg class="language-flag" viewBox="0 0 24 16" aria-hidden="true"><path fill="#fff" d="M0 0h24v16H0z"/><path fill="#ce1124" d="M10 0h4v16h-4zM0 6h24v4H0z"/></svg>EN</a></nav></div>
     <button class="menu" id="menu" aria-label="Abrir menú">☰</button>
   </div>
 </header>
@@ -434,5 +434,5 @@ reducedMotion.addEventListener('change',event=>{
   syncClusterPlayback();
 });
 </script>
-<nav class="language-switch" aria-label="Idioma"><span aria-current="page">ES</span><a href="en/index.html" lang="en" hreflang="en">EN</a></nav></body>
+</body>
 </html>
