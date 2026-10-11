@@ -102,7 +102,7 @@ h1 em{font-style:italic;font-weight:500}
 .step{background:var(--paper2);border:1px solid var(--line);padding:28px;min-height:230px}.step .n{font-family:var(--serif);font-size:32px;color:#aa9560}.step b{display:block;margin:34px 0 10px;font-size:11px;letter-spacing:.12em}.step p{font-size:12px;line-height:1.6;color:var(--mut)}
 
 .cluster-stage{background:#102430;color:#fff;border:1px solid rgba(15,27,37,.12)}
-.cluster-film{position:relative;aspect-ratio:1440/690;overflow:hidden}
+.cluster-film{position:relative;aspect-ratio:16/9;overflow:hidden}
 .cluster-video{display:block;width:100%;height:100%;object-fit:contain;background:#102430}
 .cluster-toggle{position:absolute;right:18px;bottom:18px;min-height:44px;padding:10px 16px;border:1px solid rgba(255,255,255,.28);border-radius:3px;background:rgba(10,28,39,.9);color:#fff;font:500 12px var(--sans);cursor:pointer;transition:background .2s}
 .cluster-toggle:hover{background:#1c3c4d}.cluster-toggle:focus-visible,.cluster-link:focus-visible{outline:2px solid var(--gold2);outline-offset:-4px}
@@ -139,7 +139,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 38px;display:flex;justify
  .section{padding:72px 0}.section-head{gap:20px}.info-card{padding:24px}
  .timeline{grid-template-columns:1fr}.timeline article+article{border-left:0;border-top:1px solid var(--line)}
  .method-grid{grid-template-columns:1fr}.step:last-child{grid-column:auto}.project-grid{grid-template-columns:1fr}.project{grid-template-columns:82px 1fr}.docs{grid-template-columns:1fr}
- .cluster-film{aspect-ratio:auto}.cluster-video{height:auto;aspect-ratio:1440/690}.cluster-links{grid-template-columns:1fr}.cluster-link{padding:22px 24px}.cluster-link+.cluster-link{border-left:0;border-top:1px solid rgba(255,255,255,.12)}.cluster-link p{max-width:none}.cluster-toggle{position:static;margin:4px 16px 16px;padding:8px 12px;font-size:11px}
+ .cluster-film{aspect-ratio:auto}.cluster-video{height:auto;aspect-ratio:16/9}.cluster-links{grid-template-columns:1fr}.cluster-link{padding:22px 24px}.cluster-link+.cluster-link{border-left:0;border-top:1px solid rgba(255,255,255,.12)}.cluster-link p{max-width:none}.cluster-toggle{position:static;margin:4px 16px 16px;padding:8px 12px;font-size:11px}
  .contact{padding:42px 28px}
 }
 
@@ -322,9 +322,9 @@ main::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none
   <div class="cluster-stage">
     <div class="cluster-film">
       <h3 class="visually-hidden">Una sola arquitectura profesional.</h3>
-      <video class="cluster-video" id="cluster-video" width="1440" height="690" muted loop playsinline controls preload="metadata" poster="assets/arquitectura-tres-planetas-poster.jpg" aria-label="Arquitectura profesional de Ramón A. Curbalán Vega: Hospitality, Technology y Performance orbitan alrededor de personas, procesos y sistemas.">
-        <source src="assets/arquitectura-tres-planetas-lento.mp4" type="video/mp4">
-        <p><a href="assets/arquitectura-tres-planetas-lento.mp4">Ver la animación de la arquitectura profesional.</a></p>
+      <video class="cluster-video" id="cluster-video" width="1280" height="720" muted loop playsinline controls preload="metadata" aria-label="Arquitectura profesional de Ramón A. Curbalán Vega: Hospitality, Technology y Performance orbitan alrededor de personas, procesos y sistemas.">
+        <source src="assets/arquitectura-tres-planetas-cinematografico.mp4" type="video/mp4">
+        <p><a href="assets/arquitectura-tres-planetas-cinematografico.mp4">Ver la animación de la arquitectura profesional.</a></p>
       </video>
       <button class="cluster-toggle" id="cluster-toggle" type="button" aria-controls="cluster-video" hidden>Reproducir animación</button>
     </div>
