@@ -29,7 +29,7 @@ body{display:flex;flex-direction:column}
 .navbtn{position:absolute;top:50%;transform:translateY(-50%);z-index:8;border:0;width:48px;height:70px;background:rgba(7,24,34,.86);color:#fff;font-size:28px;cursor:pointer}.prev{left:0;border-radius:0 14px 14px 0}.next{right:0;border-radius:14px 0 0 14px}
 @media(max-width:800px){.toolbar{height:58px;padding:7px 9px}.identity span{display:none}.back{padding:9px 11px;font-size:12px}.tools .ctl:nth-child(2){display:none}.stage{padding:6px}.slide{padding:28px 32px}.title{font-size:30px}.subtitle{font-size:14px}.cover h1{font-size:38px}.venn{transform:scale(.72)}.steps{gap:8px}.num{width:66px;height:66px}.step p{font-size:9px}.footer{display:none}}
 </style>
-</head>
+<style>.language-switch{position:fixed;right:16px;bottom:16px;z-index:999;display:flex;gap:10px;align-items:center;padding:9px 13px;background:#f8f9f7;color:#283337;border:1px solid #aebbb6;border-radius:6px;font:700 12px Arial,sans-serif;box-shadow:0 3px 12px #18303920}.language-switch a{color:inherit;text-decoration:underline}.language-switch a:focus-visible{outline:2px solid #466778;outline-offset:3px}</style></head>
 <body>
 <header class="toolbar">
 <a class="back" href="./">← Volver al cluster</a>
@@ -55,4 +55,4 @@ document.getElementById('prev').onclick=()=>show(i-1);document.getElementById('n
 document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='PageDown')show(i+1);if(e.key==='ArrowLeft'||e.key==='PageUp')show(i-1);if(e.key==='Escape'&&document.fullscreenElement)document.exitFullscreen()});
 document.getElementById('full').onclick=()=>document.fullscreenElement?document.exitFullscreen():document.getElementById('deck').requestFullscreen();
 </script>
-</body></html>
+<nav class="language-switch" aria-label="Idioma"><span aria-current="page">ES</span><a href="en/metodologia.html" lang="en" hreflang="en">EN</a></nav></body></html>

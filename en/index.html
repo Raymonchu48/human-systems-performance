@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#edf0ef">
+<meta name="description" content="Comprehensive portfolio of Ramón A. Curbalán Vega: hospitality, technology and human performance.">
+<title>Ramón A. Curbalán Vega — Human · Systems · Performance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+ --paper:#edf0ef;--paper2:#f8f9f7;--ink:#283337;--mut:#58676c;--line:#d3dad8;--navy:#33464e;
+ --gold:#806c46;--gold2:#d9c9a7;--blue:#466778;--blue2:#9bb4c1;--green:#4e6a57;--green2:#a7bdab;
+ --serif:"Fraunces",Georgia,serif;--sans:"Inter",system-ui,sans-serif
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{max-width:100%}
+.shell{width:min(1440px,94vw);margin:auto}
+.header{position:sticky;top:0;z-index:80;background:rgba(244,240,232,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(15,27,37,.1)}
+.header-in{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none}
+.mark{position:relative;width:46px;height:46px;flex:0 0 46px;display:grid;place-items:center;padding-bottom:6px;border-radius:3px;background:var(--navy);color:var(--gold2);font-family:var(--serif);font-size:22px;letter-spacing:-.08em}
+.mark:after{content:"";position:absolute;left:6px;right:8px;bottom:10px;height:1.5px;background:var(--gold2);transform:rotate(-11deg)}
+.brand b{display:block;padding-bottom:7px;border-bottom:1px solid var(--gold2);font-size:14px;letter-spacing:.12em;line-height:1.2}.brand small{display:block;margin-top:7px;font-size:10px;font-weight:600;letter-spacing:.22em;color:#536171;line-height:1.2}
+.nav{display:flex;align-items:center;gap:23px}.nav a{text-decoration:none;font-size:11px;font-weight:700;letter-spacing:.11em;color:#485763}.nav a:hover{color:var(--ink)}
+.header-cta{background:var(--navy);color:#fff;text-decoration:none;padding:12px 17px;font-size:12px;font-weight:700}
+.academic-mobile{display:none}.header-cta:focus-visible{outline:3px solid var(--gold);outline-offset:4px}@media(max-width:1100px){.nav.open .academic-mobile{display:block}}
+.menu{display:none;border:0;background:none;font-size:25px;color:var(--ink)}
+
+.hero{min-height:calc(100vh - 76px);display:grid;grid-template-columns:1.12fr .88fr;gap:4.5vw;align-items:center;padding:58px 0 70px}
+.eyebrow{font-size:10px;letter-spacing:.22em;font-weight:700;color:var(--gold);margin-bottom:22px;display:flex;align-items:center;gap:12px}.eyebrow:before{content:"";width:42px;height:1px;background:var(--gold)}
+h1,h2,h3{font-family:var(--serif);font-weight:500}
+h1{font-size:clamp(50px,6vw,88px);line-height:.94;letter-spacing:-.035em;max-width:900px}
+h1 em{font-style:italic;font-weight:500}
+.hero-lede{max-width:760px;margin:26px 0 28px;color:#42525d;font-size:17px;line-height:1.75}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.02em;border:1px solid var(--ink)}
+.btn.dark{background:var(--navy);border-color:var(--navy);color:#fff}.btn.light{background:transparent}
+.hero-meta{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin-top:44px}
+.hero-meta div{padding:18px 18px 0 0}.hero-meta div+div{border-left:1px solid var(--line);padding-left:18px}.hero-meta b{display:block;font-size:13px}.hero-meta span{display:block;margin-top:4px;font-size:11px;color:var(--mut);line-height:1.5}
+
+.portrait-wrap{position:relative;padding:34px 34px 0 0}
+.portrait-frame{position:relative;background:var(--navy);min-height:650px;overflow:hidden}
+.portrait-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
+.portrait-frame:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(8,21,30,.7))}
+.portrait-label{position:absolute;left:-28px;bottom:42px;background:var(--paper2);border:1px solid var(--line);padding:22px 24px;width:min(360px,80%);z-index:2}
+.portrait-label strong{font-family:var(--serif);font-size:23px;display:block}.portrait-label p{margin-top:8px;font-size:12px;color:var(--mut);line-height:1.55}
+.axis{position:absolute;right:-6px;top:34px;bottom:0;width:3px;background:linear-gradient(var(--gold),var(--blue),var(--green))}
+
+.section{padding:110px 0;border-top:1px solid var(--line)}
+.section-head{display:grid;grid-template-columns:.75fr 1.25fr;gap:60px;margin-bottom:48px}
+.section-index{font-size:10px;letter-spacing:.2em;font-weight:700;color:var(--mut)}
+.section h2{font-size:clamp(38px,4.4vw,66px);line-height:1.02;letter-spacing:-.025em}
+.section-intro{font-size:16px;line-height:1.75;color:#475761;max-width:700px;margin-top:17px}
+
+.manifesto{display:grid;grid-template-columns:1.15fr .85fr;gap:24px}
+.quote-panel{position:relative;isolation:isolate;background:var(--navy);color:#fff;padding:0;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
+.portrait-network{position:relative;aspect-ratio:1.65;min-height:340px;isolation:isolate}
+.network-backdrop{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(9px);opacity:.12;z-index:-2;transform:scale(1.08)}
+.portrait-network:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 48%,rgba(75,183,216,.15),transparent 65%),linear-gradient(180deg,transparent 55%,var(--navy))}
+.network-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.network-portrait{position:absolute;margin:0;left:var(--x);top:var(--y);width:var(--size,21%);aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);border:2px solid var(--ring,#c0d4dc);box-shadow:0 0 0 7px rgba(255,255,255,.035),0 12px 32px rgba(0,0,0,.3)}
+.network-portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:var(--focus,center);border-radius:50%}
+.network-portrait figcaption{position:absolute;left:50%;bottom:-24px;transform:translateX(-50%);white-space:nowrap;color:var(--ring,#c0d4dc);font-size:10px;font-weight:600;letter-spacing:.12em}
+.network-portrait.core{--x:50%;--y:48%;--size:32%;--ring:var(--gold2);--focus:64% 32%;border-width:3px}
+.network-portrait.core:before{content:"";position:absolute;inset:-13px;border:1px dashed rgba(227,200,115,.5);border-radius:50%}
+.network-portrait.host{--x:18%;--y:25%;--ring:var(--gold2);--focus:57% 35%}
+.network-portrait.tech{--x:82%;--y:25%;--ring:var(--blue2);--focus:70% 30%}
+.network-portrait.coach{--x:81%;--y:77%;--ring:var(--green2);--focus:center 28%}
+.network-portrait.work{--x:19%;--y:77%;--size:18%;--focus:30% center}
+.portrait-network .network-portrait{--focus:center}
+.network-caption{position:relative;padding:34px 42px 38px;border-top:1px solid rgba(255,255,255,.09)}
+.quote-panel blockquote{font-family:var(--serif);font-size:clamp(25px,2.2vw,34px);line-height:1.2}
+.quote-panel small{display:block;margin-top:22px;color:#b8c4ca;font-size:10px;letter-spacing:.12em;line-height:1.6}
+@media(max-width:720px){.portrait-network{min-height:0;aspect-ratio:1.12}.network-portrait{--size:24%}.network-portrait.core{--size:34%}.network-portrait.work{--size:21%}.network-portrait figcaption{font-size:8px;letter-spacing:.05em;bottom:-21px}.network-caption{padding:30px 26px}.quote-panel blockquote{font-size:27px}}
+.manifesto-side{display:grid;gap:24px}
+.info-card{background:var(--paper2);border:1px solid var(--line);padding:32px}
+.info-card span{font-size:10px;letter-spacing:.16em;font-weight:700;color:var(--gold)}.info-card h3{font-size:27px;margin:10px 0 8px}.info-card p{font-size:13px;line-height:1.65;color:var(--mut)}
+
+.divisions{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.division{position:relative;min-height:540px;border:1px solid var(--line);background:var(--paper2);display:flex;flex-direction:column;overflow:hidden;transition:.25s}
+.division:hover{transform:translateY(-5px);box-shadow:0 24px 60px rgba(15,27,37,.09)}
+.division:before{content:"";height:6px;display:block}.division.host:before{background:var(--gold)}.division.tech:before{background:var(--blue)}.division.sport:before{background:var(--green)}
+.division-in{padding:32px;display:flex;flex-direction:column;flex:1}
+.dnum{font-size:10px;font-weight:700;letter-spacing:.16em}.host .dnum{color:var(--gold)}.tech .dnum{color:var(--blue)}.sport .dnum{color:var(--green)}
+.division h3{font-size:34px;line-height:1.05;margin:14px 0 6px}.division h4{font-size:10px;letter-spacing:.13em;color:var(--mut);margin-bottom:26px}
+.division ul{list-style:none;border-top:1px solid var(--line)}.division li{padding:13px 0;border-bottom:1px solid var(--line);font-size:13px;line-height:1.5;color:#44545f}.division li b{display:block;color:var(--ink);font-size:12px;margin-bottom:2px}
+.division.host{--button-bg:#e3c873;--button-hover:#d5b65a;--button-ink:#0f1b25}.division.tech{--button-bg:#126b88;--button-hover:#0e566e;--button-ink:#fff}.division.sport{--button-bg:#286a3e;--button-hover:#205632;--button-ink:#fff}
+.division a{margin-top:auto;position:relative;top:16px;width:100%;min-height:48px;padding:14px 18px;background:var(--button-bg);color:var(--button-ink);border:1px solid transparent;border-radius:3px;text-decoration:none;font-size:13px;font-weight:700;line-height:1.4;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background .2s,box-shadow .2s}
+.division a:hover{background:var(--button-hover);box-shadow:0 4px 12px rgba(15,27,37,.12)}.division a:focus-visible{outline:3px solid var(--ink);outline-offset:4px}.division a span{font-size:19px;line-height:1}
+
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.timeline article{padding:30px 28px;min-height:245px}.timeline article+article{border-left:1px solid var(--line)}
+.timeline .year{font-family:var(--serif);font-size:40px}.timeline h3{font-size:20px;margin:18px 0 9px}.timeline p{font-size:12px;line-height:1.6;color:var(--mut)}
+
+.method-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.step{background:var(--paper2);border:1px solid var(--line);padding:28px;min-height:230px}.step .n{font-family:var(--serif);font-size:32px;color:#aa9560}.step b{display:block;margin:34px 0 10px;font-size:11px;letter-spacing:.12em}.step p{font-size:12px;line-height:1.6;color:var(--mut)}
+
+.cluster-stage{background:#102430;color:#fff;border:1px solid rgba(15,27,37,.12)}
+.cluster-film{position:relative;aspect-ratio:16/9;overflow:hidden}
+.cluster-video{display:block;width:100%;height:100%;object-fit:contain;background:#102430}
+.cluster-toggle{position:absolute;right:18px;bottom:18px;min-height:44px;padding:10px 16px;border:1px solid rgba(255,255,255,.28);border-radius:3px;background:rgba(10,28,39,.9);color:#fff;font:500 12px var(--sans);cursor:pointer;transition:background .2s}
+.cluster-toggle:hover{background:#1c3c4d}.cluster-toggle:focus-visible,.cluster-link:focus-visible{outline:2px solid var(--gold2);outline-offset:-4px}
+.cluster-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.12)}
+.cluster-link{position:relative;padding:24px 28px;color:#fff;text-decoration:none;transition:background .2s}
+.cluster-link+.cluster-link{border-left:1px solid rgba(255,255,255,.12)}
+.cluster-link:hover{background:rgba(255,255,255,.045)}
+.cluster-link b{display:flex;align-items:center;justify-content:space-between;gap:12px;font:500 23px var(--serif)}
+.cluster-link b span{font:400 18px var(--sans);color:var(--accent)}
+.cluster-link small{display:block;margin:7px 0 12px;color:var(--accent);font-size:10px;letter-spacing:.14em}
+.cluster-link p{max-width:330px;font-size:13px;line-height:1.65;color:#b9c8d0}
+.cluster-link.host{--accent:var(--gold2)}.cluster-link.tech{--accent:var(--blue2)}.cluster-link.sport{--accent:var(--green2)}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+
+.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.project{display:grid;grid-template-columns:120px 1fr;border:1px solid var(--line);background:var(--paper2);min-height:190px;text-decoration:none}.project .code{display:grid;place-items:center;background:var(--navy);color:var(--gold2);font-family:var(--serif);font-size:27px}.project .copy{padding:28px}.project h3{font-size:27px}.project p{margin-top:7px;font-size:12px;line-height:1.6;color:var(--mut)}.project span{display:block;margin-top:24px;font-size:11px;font-weight:700}
+.skills{display:flex;flex-wrap:wrap;gap:8px}.skills span{padding:10px 13px;border:1px solid var(--line);background:var(--paper2);font-size:10px;font-weight:700;letter-spacing:.09em}
+.docs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:34px}.doc{padding:22px;border:1px solid var(--line);text-decoration:none;background:var(--paper2)}.doc b{font-size:12px}.doc span{display:block;font-size:11px;color:var(--mut);margin-top:6px;line-height:1.45}
+
+.contact{background:var(--navy);color:#fff;padding:clamp(28px,4vw,58px);margin-bottom:42px;display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(28px,4vw,58px);align-items:center}.contact h2{font-size:clamp(36px,3.7vw,56px);line-height:1.08}.contact p{margin-top:20px;color:#b9c6cd;line-height:1.65}.contact .btn{border-color:var(--gold2);color:var(--navy);background:var(--gold2);width:max-content;margin:28px 0 0;min-height:48px;display:inline-flex;align-items:center}.contact-visual{margin:0}.contact-visual img{display:block;width:100%;height:auto;border:1px solid rgba(227,200,115,.2)}
+footer{border-top:1px solid var(--line);padding:22px 0 38px;display:flex;justify-content:space-between;gap:20px;color:#71808a;font-size:11px}
+
+.reveal{opacity:0;transform:translateY(18px);transition:.65s ease}.reveal.on{opacity:1;transform:none}
+
+@media(max-width:1100px){
+ .nav{display:none}.menu{display:block}.header-cta{display:none}.nav.open{display:flex;position:absolute;right:3vw;top:76px;flex-direction:column;align-items:flex-start;background:var(--paper2);border:1px solid var(--line);padding:20px;width:240px}
+ .hero{grid-template-columns:1fr;min-height:auto}.portrait-wrap{max-width:720px}.portrait-frame{min-height:760px}
+ .section-head,.manifesto,.contact{grid-template-columns:1fr}.divisions{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}.timeline article:nth-child(3){border-left:0;border-top:1px solid var(--line)}.timeline article:nth-child(4){border-top:1px solid var(--line)}
+ .method-grid{grid-template-columns:repeat(2,1fr)}.step:last-child{grid-column:1/-1}.docs{grid-template-columns:1fr 1fr}.contact .btn{margin-left:0}
+}
+@media(max-width:720px){
+ .shell{width:min(92vw,720px)}.header-in{height:68px}.brand b{font-size:10px}.brand small{display:none}.nav.open{top:68px}
+ .hero{padding-top:35px}.hero h1{font-size:48px}.hero-meta{grid-template-columns:1fr}.hero-meta div+div{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:15px}
+ .portrait-wrap{padding:18px 18px 0 18px}.portrait-frame{min-height:520px}.portrait-label{left:0;bottom:18px;width:86%}.axis{right:4px;top:18px}
+ .section{padding:72px 0}.section-head{gap:20px}.info-card{padding:24px}
+ .timeline{grid-template-columns:1fr}.timeline article+article{border-left:0;border-top:1px solid var(--line)}
+ .method-grid{grid-template-columns:1fr}.step:last-child{grid-column:auto}.project-grid{grid-template-columns:1fr}.project{grid-template-columns:82px 1fr}.docs{grid-template-columns:1fr}
+ .cluster-film{aspect-ratio:auto}.cluster-video{height:auto;aspect-ratio:16/9}.cluster-links{grid-template-columns:1fr}.cluster-link{padding:22px 24px}.cluster-link+.cluster-link{border-left:0;border-top:1px solid rgba(255,255,255,.12)}.cluster-link p{max-width:none}.cluster-toggle{position:static;margin:4px 16px 16px;padding:8px 12px;font-size:11px}
+ .contact{padding:42px 28px}
+}
+
+.case-section{margin-top:54px}.case-heading{margin-bottom:24px}.case-heading h3{font-size:32px;margin:12px 0}.case-heading p{font-size:14px;line-height:1.6;color:var(--mut);max-width:760px}.case-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.case-card{display:grid;grid-template-columns:140px minmax(0,1fr);background:var(--paper2);border:1px solid var(--line);border-top:4px solid var(--case-color);text-decoration:none;transition:box-shadow .2s}.case-card:hover{box-shadow:0 12px 30px rgba(15,27,37,.09)}.case-card:focus-visible{outline:3px solid var(--case-color);outline-offset:4px}.case-cover{padding:20px 14px;background:#eae6dd;display:flex;align-items:flex-start}.case-cover img{display:block;width:100%;height:auto;border:1px solid #d8cfbf}.case-copy{padding:25px}.case-copy small{font-size:9px;letter-spacing:.12em;color:var(--case-color);font-weight:700}.case-copy h3{font-size:25px;line-height:1.15;margin:12px 0}.case-copy p{font-size:13px;line-height:1.65;color:var(--mut)}.case-copy .case-status{font-size:11px;margin-top:15px}.case-copy span{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px;padding:13px 15px;background:var(--navy);color:#fff;font-size:11px;font-weight:700;min-height:44px}@media(max-width:720px){.case-grid{grid-template-columns:1fr}.case-card{grid-template-columns:82px minmax(0,1fr)}.case-cover{padding:16px 8px}.case-copy{padding:20px}.case-copy h3{font-size:23px}}
+
+/* Stone and pearl: sculpted surfaces, subtle discipline line drawings. */
+body{background:linear-gradient(125deg,#e7eceb 0%,#f5f6f3 52%,#edf0ef 100%)}
+.header{background:rgba(242,245,242,.94);border-color:var(--line)}
+.mark,.header-cta,.btn,.portrait-frame,.portrait-label,.info-card,.division,.step,.project,.doc,.case-card,.quote-panel,.contact,.cluster-stage{border-radius:12px}
+.portrait-frame{box-shadow:16px 20px 38px rgba(50,66,65,.18),-9px -9px 25px rgba(255,255,255,.85)}
+.portrait-label,.info-card,.division,.step,.project,.doc,.case-card{background:linear-gradient(135deg,#fbfcfa,#e9eeeb);border-color:rgba(255,255,255,.85);box-shadow:9px 12px 25px rgba(60,76,73,.1),-7px -7px 20px rgba(255,255,255,.85)}
+.division:hover,.project:hover,.doc:hover,.case-card:hover{box-shadow:12px 17px 30px rgba(60,76,73,.16),-8px -8px 22px #fff}
+.division:before{height:3px;opacity:.6}
+.division.host{--button-bg:#d9c9a7;--button-hover:#cbb98f;--button-ink:#283337}
+.division.tech{--button-bg:#466778;--button-hover:#385563;--button-ink:#fff}
+.division.sport{--button-bg:#4e6a57;--button-hover:#405947;--button-ink:#fff}
+.discipline-drawing{display:block;width:100%;height:112px;margin:0 0 24px;filter:drop-shadow(1px 2px 1px #fff)}
+.host .discipline-drawing{color:#998560}.tech .discipline-drawing{color:#718f9d}.sport .discipline-drawing{color:#7b9580}
+.quote-panel,.contact{background:linear-gradient(135deg,#f9faf7,#e1e7e3);color:var(--ink);border:1px solid #fff;box-shadow:12px 16px 32px rgba(60,76,73,.13),-8px -8px 24px #fff}
+.network-backdrop{opacity:.04}
+.portrait-network:before{background:radial-gradient(ellipse at 50% 48%,#fff9,transparent 65%),linear-gradient(180deg,transparent 65%,#e5eae6)}
+.network-portrait{box-shadow:0 0 0 7px #f7f9f580,9px 13px 21px #3c4c492e,-6px -6px 17px #fff}
+.network-portrait.core:before{border-color:#9d8960}
+.network-portrait figcaption{color:var(--ink)}
+.network-caption{border-color:var(--line)}
+.quote-panel small,.contact p{color:var(--mut)}
+.contact .section-index{color:var(--mut)!important}
+.contact-visual img{border-radius:8px;border-color:var(--line)}
+.cluster-stage{background:var(--paper2);color:var(--ink);overflow:hidden;box-shadow:10px 14px 30px #3c4c491c,-8px -8px 24px #fff}
+.cluster-links,.cluster-link+.cluster-link{border-color:var(--line)}
+.cluster-link{color:var(--ink);background:linear-gradient(135deg,#fafbf8,#e7ece8)}
+.cluster-link:hover{background:#fff}
+.cluster-link p{color:var(--mut)}
+.cluster-link.host{--accent:var(--gold)}.cluster-link.tech{--accent:var(--blue)}.cluster-link.sport{--accent:var(--green)}
+.project{overflow:hidden}.project .code{background:linear-gradient(135deg,#e0e7e2,#f6f8f4);color:var(--ink);border-right:1px solid var(--line)}
+.case-cover{background:#e4eae6}.case-cover img{border-color:var(--line)}
+.step .n{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;font-size:27px;color:var(--gold);background:linear-gradient(135deg,#fff,#dde4df);box-shadow:5px 7px 12px #3c4c491c,-4px -4px 12px #fff}
+.skills span{border-radius:20px;background:#f3f6f1}
+.btn.light{background:#f4f7f2;box-shadow:4px 5px 12px #3c4c4912,-4px -4px 12px #fff;border-color:#b8c4bd}
+a:focus-visible,button:focus-visible{outline:3px solid #466778;outline-offset:4px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.division{transition:none}.division:hover{transform:none}}
+@media(max-width:720px){.discipline-drawing{height:96px;margin-bottom:20px}.info-card,.step,.division,.project,.doc{box-shadow:5px 7px 16px #3c4c4914,-4px -4px 14px #fff}}
+
+
+/* Background line art: architecture, movement and connected systems. */
+main{position:relative;isolation:isolate}
+main::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221600%22%20height%3D%221700%22%20viewBox%3D%220%200%201600%201700%22%3E%0A%3Cdefs%3E%3Cg%20id%3D%22lines%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.15%22%3E%0A%3C!--%20Hospitality%3A%20architectural%20arches%20and%20a%20table%20setting%20--%3E%0A%3Cg%20transform%3D%22translate(-50%2095)%22%20stroke%3D%22%238c7958%22%3E%0A%3Cpath%20d%3D%22M0%20240V85a62%2062%200%200%201%20124%200v155M145%20240V85a62%2062%200%200%201%20124%200v155M-10%20240h294M-10%20253h294M14%20222V85a48%2048%200%200%201%2096%200v137M159%20222V85a48%2048%200%200%201%2096%200v137%22%2F%3E%0A%3Cellipse%20cx%3D%22138%22%20cy%3D%22320%22%20rx%3D%2299%22%20ry%3D%2222%22%2F%3E%3Cpath%20d%3D%22m40%20320-18%2069q116%2027%20232%200l-18-69M50%20398v34m178-34v34M102%20316v-37m-12%200h24m-25-29h26v16a13%2013%200%200%201-26%200ZM172%20316v-37m-12%200h24m-25-29h26v16a13%2013%200%200%201-26%200Z%22%2F%3E%0A%3C%2Fg%3E%0A%3C!--%20Technology%3A%20circuit%20routes%20and%20a%20processor%20--%3E%0A%3Cg%20transform%3D%22translate(1380%20360)%22%20stroke%3D%22%236e8996%22%3E%0A%3Crect%20x%3D%2250%22%20y%3D%2292%22%20width%3D%2286%22%20height%3D%2286%22%20rx%3D%2212%22%2F%3E%3Crect%20x%3D%2270%22%20y%3D%22112%22%20width%3D%2246%22%20height%3D%2246%22%20rx%3D%226%22%2F%3E%0A%3Cpath%20d%3D%22M50%20112H8V38h-58M50%20154H-18v104h-46M136%20112h54V55h68M136%20154h36v116h66M70%2092V53m23%2039V12m23%2080V45M70%20178v42m23-42v99m23-99v59%22%2F%3E%0A%3Ccircle%20cx%3D%22-56%22%20cy%3D%2238%22%20r%3D%226%22%2F%3E%3Ccircle%20cx%3D%22-70%22%20cy%3D%22258%22%20r%3D%226%22%2F%3E%3Ccircle%20cx%3D%2293%22%20cy%3D%226%22%20r%3D%226%22%2F%3E%3Ccircle%20cx%3D%2293%22%20cy%3D%22283%22%20r%3D%226%22%2F%3E%0A%3Cpath%20d%3D%22M-70%20320h112l26%2026h150M-38%20340h67l25%2025h148%22%2F%3E%0A%3C%2Fg%3E%0A%3C!--%20Human%20performance%3A%20movement%2C%20mountains%20and%20water%20--%3E%0A%3Cg%20transform%3D%22translate(-30%20900)%22%20stroke%3D%22%237b917f%22%3E%0A%3Cpath%20d%3D%22m0%20200%2071-87%2035%2040%2057-99%2073%20119%2035-43%2061%2070M44%20146l27-33%2018%2020M129%20113l34-59%2031%2051-23-12-14%2023M0%20227q46-14%2092%200t92%200t92%200M0%20246q46-14%2092%200t92%200t92%200%22%2F%3E%0A%3Ccircle%20cx%3D%22161%22%20cy%3D%22320%22%20r%3D%2216%22%2F%3E%3Cpath%20d%3D%22m150%20342-39%2046%2042%2039-21%2061M137%20360l41%2024%2038-13M117%20378l-39-3-27%2030M154%20426l41%2019%2032%2043%22%2F%3E%0A%3C%2Fg%3E%0A%3C!--%20Quiet%20landscape%20contour%20connecting%20the%20disciplines%20--%3E%0A%3Cg%20transform%3D%22translate(1170%201250)%22%20stroke%3D%22%2383938d%22%3E%0A%3Cpath%20d%3D%22m0%20174%2052-27%2030%206%2047-70%2027%2020%2045-64%2040%2022%2025%2050%2025-12%2051%2051%2088%2024M0%20191l56-18%2038%207%2040-41%2032%209%2039-52%2023%208%2033%2049%2027-3%2064%2026%2078%2015M0%20214q86-34%20173-8t257%203%22%2F%3E%0A%3Cpath%20d%3D%22M300%2080V8m-20%2047%2020-47%2021%2047m-46%2019%2025-46%2026%2046M342%20100V38m-19%2043%2019-43%2020%2043%22%2F%3E%0A%3C%2Fg%3E%3C%2Fg%3E%3C%2Fdefs%3E%0A%3Cuse%20href%3D%22%23lines%22%20stroke%3D%22%23fff%22%20transform%3D%22translate(-1%20-2)%22%20opacity%3D%22.5%22%2F%3E%0A%3Cuse%20href%3D%22%23lines%22%2F%3E%0A%3C%2Fsvg%3E");background-position:center 0;background-size:1600px 1700px;background-repeat:repeat-y;opacity:.23}
+@media(min-width:1700px){main::before{background-size:100% auto}}
+@media(max-width:1100px){main::before{background-size:1250px auto;opacity:.17}}
+@media(max-width:720px){main::before{background-size:900px auto;opacity:.12}}
+@media print{main::before{display:none}}
+
+
+/* Navegación de secciones: barrido ascendente, sin capas superpuestas */
+#vision,#areas,#experiencia,#metodo,#portfolios,#proyectos{scroll-margin-top:86px}
+@keyframes sectionSweepUp{
+  from{opacity:.42;transform:translate3d(0,58px,0);filter:blur(3px)}
+  to{opacity:1;transform:translate3d(0,0,0);filter:blur(0)}
+}
+.reveal.on.nav-sweep{animation:sectionSweepUp .82s cubic-bezier(.18,.72,.22,1) both}
+@media(prefers-reduced-motion:reduce){
+  .reveal.on.nav-sweep{animation:none}
+}
+
+.experience-profile-action{display:flex;justify-content:center;padding:35px 0 0}.experience-profile-action .btn{min-width:240px;gap:15px;transition:transform .25s ease,box-shadow .25s ease}.experience-profile-action .btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(8,21,30,.16)}@media(prefers-reduced-motion:reduce){.experience-profile-action .btn{transition:none}.experience-profile-action .btn:hover{transform:none}}
+</style>
+<style>.language-switch{position:fixed;right:16px;bottom:16px;z-index:999;display:flex;gap:10px;align-items:center;padding:9px 13px;background:#f8f9f7;color:#283337;border:1px solid #aebbb6;border-radius:6px;font:700 12px Arial,sans-serif;box-shadow:0 3px 12px #18303920}.language-switch a{color:inherit;text-decoration:underline}.language-switch a:focus-visible{outline:2px solid #466778;outline-offset:3px}</style><link rel="alternate" hreflang="es" href="https://raymonchu48.github.io/human-systems-performance/index.html"><link rel="alternate" hreflang="en" href="https://raymonchu48.github.io/human-systems-performance/en/index.html"></head>
+<body>
+<header class="header">
+  <div class="shell header-in">
+    <a class="brand" href="#inicio"><span class="mark">RC</span><span><b>RAMÓN A. CURBALÁN VEGA</b><small>HUMAN · SYSTEMS · PERFORMANCE</small></span></a>
+    <nav class="nav" id="nav" aria-label="Main navigation">
+      <a href="#vision">VISION</a><a href="#areas">AREAS</a><a href="#experiencia">EXPERIENCE</a><a href="#metodo">METHOD</a><a href="#portfolios">PORTFOLIOS</a><a href="#proyectos">PROJECTS</a>
+      <a class="academic-mobile" href="assets/perfil-academico-ramon-curbalan.pdf" target="_blank" rel="noopener">ACADEMIC PROFILE ↗</a>
+    </nav>
+    <a class="header-cta" href="assets/perfil-academico-ramon-curbalan.pdf" target="_blank" rel="noopener" aria-label="Academic profile, PDF in a new tab">Academic profile ↗</a>
+    <button class="menu" id="menu" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="shell hero">
+  <div>
+    <div class="eyebrow">EXECUTIVE PROFILE · OPERATIONS · TECHNOLOGY · PERFORMANCE</div>
+    <h1>People, processes <em>and technology</em> under shared leadership.</h1>
+    <p class="hero-lede">I bring operations management, technology and human performance together through a shared approach: analyse, plan, execute, measure and improve. The customer experience, system reliability and team performance all contribute to the same outcome.</p>
+    <div class="hero-actions">
+      <a class="btn dark" href="assets/Perfil_Profesional_Integral_Ramon_Curbalan.pdf" target="_blank" rel="noopener">Open professional profile</a>
+      <a class="btn light" href="#areas">Explore areas ↓</a>
+    </div>
+    <div class="hero-meta">
+      <div><b>20+ years</b><span>Operations, leadership and service experience.</span></div>
+      <div><b>3 disciplines</b><span>Hospitality · Systems · Human Performance.</span></div>
+      <div><b>1 criterion</b><span>People · processes · results.</span></div>
+    </div>
+  </div>
+  <div class="portrait-wrap">
+    <div class="axis"></div>
+    <div class="portrait-frame"><img src="../assets/ramon-perfil-coach.webp" width="584" height="915" fetchpriority="high" alt="Ramón A. Curbalán Vega, with his arms crossed and a tablet, in a training environment"></div>
+    <div class="portrait-label"><strong>Operations leadership with technical insight.</strong><p>5★/5★ GL hospitality, systems, digital projects, training, nutrition and continuous improvement connected in a single professional vision.</p></div>
+  </div>
+</section>
+
+<section class="section shell reveal" id="vision">
+  <div class="section-head"><div class="section-index">01 / VISION</div><div><h2>One vision. Three disciplines.</h2><p class="section-intro">My professional profile brings leadership, systems and performance together. They share a common discipline: understand the context, organise resources and turn complexity into measurable results.</p></div></div>
+  <div class="manifesto">
+    <div class="quote-panel">
+      <div class="portrait-network" role="group" aria-label="Ramón A. Curbalán Vega: a professional vision that connects management, hospitality, technology and human performance">
+        <img class="network-backdrop" src="../assets/concept-integration.webp" alt="" loading="lazy" aria-hidden="true">
+        <svg class="network-lines" viewbox="0 0 100 100" preserveaspectratio="none" aria-hidden="true">
+          <g fill="none" stroke-width=".18"><path d="M18 25L50 48" stroke="#e3c873"/><path d="M82 25L50 48" stroke="#4bb7d8"/><path d="M81 77L50 48" stroke="#75b888"/><path d="M19 77L50 48" stroke="#a8c3d0"/><path d="M18 25L19 77L81 77L82 25L18 25" stroke="#90a6b4" stroke-dasharray=".5 1" opacity=".4"/></g>
+          <g fill="#a8c3d0" opacity=".35"><circle cx="5" cy="12" r=".7"/><circle cx="40" cy="10" r=".45"/><circle cx="94" cy="52" r=".7"/><circle cx="48" cy="90" r=".5"/></g>
+        </svg>
+        <figure class="network-portrait core"><img src="../assets/ramon-perfiles-integrados.webp" alt="Ramón A. Curbalán Vega: main management profile along with his hospitality, training and technology profiles" loading="lazy" width="1000" height="1000"></figure>
+        <figure class="network-portrait host"><img src="../assets/concept-hospitality.webp" alt="Restaurant prepared for a high level of service" loading="lazy"><figcaption>HOSPITALITY</figcaption></figure>
+        <figure class="network-portrait tech"><img src="../assets/concept-technology.webp" alt="Servers and technological infrastructure connections" loading="lazy"><figcaption>TECHNOLOGY</figcaption></figure>
+        <figure class="network-portrait coach"><img src="../assets/concept-performance.webp" alt="Strength training with progress tracking" loading="lazy"><figcaption>PERFORMANCE</figcaption></figure>
+        <figure class="network-portrait work"><img src="../assets/concept-operations.webp" alt="Planning an event, its times and resources" loading="lazy"><figcaption>OPERATIONS</figcaption></figure>
+      </div>
+      <div class="network-caption"><blockquote>“I design people, processes and technology to work together as one system.”</blockquote><small>RAMÓN A. CURBALÁN VEGA · HUMAN · SYSTEMS · PERFORMANCE</small></div>
+    </div>
+    <div class="manifesto-side">
+      <article class="info-card"><span>OPERATIONS</span><h3>Leadership and service</h3><p>Planning, interdepartmental coordination, customer experience, 5★/5★ GL standards, resources, costs and execution.</p></article>
+      <article class="info-card"><span>SYSTEMS</span><h3>Applied technology</h3><p>Development, networks, security, AI and automation aimed at solving real problems and reducing operational friction.</p></article>
+      <article class="info-card"><span>PERFORMANCE</span><h3>Sustainable performance</h3><p>Training, nutrition, habits and monitoring with a comprehensive, practical and progressive vision.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section shell reveal" id="areas">
+  <div class="section-head"><div class="section-index">02 / AREAS</div><div><h2>Three areas. One approach to work.</h2><p class="section-intro">Each area has its own identity and shares a common methodology, high standards and focus on results.</p></div></div>
+  <div class="divisions">
+    <article class="division host"><div class="division-in"><svg class="discipline-drawing" viewbox="0 0 240 124" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M25 95V39a25 25 0 0 1 50 0v56M165 95V39a25 25 0 0 1 50 0v56M17 95h206M46 77q74-17 148 0l12 20H34Z M51 97v14m138-14v14M88 69V44m-9 0h18m-18-18h18v9a9 9 0 0 1-18 0ZM146 69V44m-9 0h18m-18-18h18v9a9 9 0 0 1-18 0ZM115 64V29m-7 35h14m-10-44q-4-6 4-11 6 6 0 11M104 79q15-5 30 0"/></g></svg><div class="dnum">01 — HOSPITALITY · F&amp;B</div><h3>Hospitality Operations</h3><h4>EVENTS · BANQUETS · TEAMS · KPI</h4><ul>
+      <li><b>Planning</b>BEO, layouts, schedules, volumes, timings and critical points.</li>
+      <li><b>Resources</b>Staffing for peak demand, purchasing, inventories, bars, service equipment and back-of-house operations.</li>
+      <li><b>Execution</b>Coordinating kitchen, dining room, events and reception, with minute-by-minute service management.</li>
+      <li><b>Control</b>Quality, satisfaction, consumption, incidents, costs and operational learning.</li>
+    </ul><a href="perfil-hosteleria.html">Explore Hospitality <span aria-hidden="true">↗</span></a></div></article>
+
+    <article class="division tech"><div class="division-in"><svg class="discipline-drawing" viewbox="0 0 240 124" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="94" y="36" width="51" height="45" rx="7"/><rect x="105" y="47" width="29" height="23" rx="3"/><path d="M94 48H68V23H36M94 68H53v29H27M145 48h26V23h34M145 68h43v29h25M108 36V15m15 21V9m12 27V18M108 81v25m15-25v32m12-32v25M40 59h39m82 0h39"/><circle cx="31" cy="23" r="5"/><circle cx="22" cy="97" r="5"/><circle cx="210" cy="23" r="5"/><circle cx="218" cy="97" r="5"/><circle cx="35" cy="59" r="4"/><circle cx="205" cy="59" r="4"/></g></svg><div class="dnum">02 — TECHNOLOGY · SYSTEMS</div><h3>Systems &amp; Data</h3><h4>DEVELOPMENT · NETWORKS · SECURITY · AI</h4><ul>
+      <li><b>Development</b>Frontend, logic, integrations and responsive digital products.</li>
+      <li><b>Systems</b>Windows/Linux, virtualization, services and deployment.</li>
+      <li><b>Networks &amp; Security</b>NAT, VPN, diagnosis, hardening, backup and continuity.</li>
+      <li><b>AI &amp; Automation</b>Performance indicators, assistants and workflows designed for specific tasks.</li>
+    </ul><a href="perfil-tecnologia.html">Explore Technology <span aria-hidden="true">↗</span></a></div></article>
+
+    <article class="division sport"><div class="division-in"><svg class="discipline-drawing" viewbox="0 0 240 124" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="m12 99 41-45 20 21 33-43 32 39 19-17 70 45M39 70l14 7 7-4M85 59l21-27 18 29M20 110h199"/><circle cx="142" cy="23" r="9"/><path d="m138 35-19 22 26 18-15 28M132 43l20 12 24-7M123 53l-21-1-13 15M144 74l22 8 22 20"/></g></svg><div class="dnum">03 — SPORT · PERFORMANCE</div><h3>Human Performance</h3><h4>TRAINING · NUTRITION · WELL-BEING</h4><ul>
+      <li><b>Movement</b>Structured training, progression and technique.</li>
+      <li><b>Nutrition</b>Practical, sustainable and contextualized food planning.</li>
+      <li><b>Recovery</b>Sleep, habits and continuity as part of performance.</li>
+      <li><b>Tracking</b>Adjustment, adherence and continuous improvement without isolated solutions.</li>
+    </ul><a href="perfil-deporte.html">Explore Sport <span aria-hidden="true">↗</span></a></div></article>
+  </div>
+</section>
+
+<section class="section shell reveal" id="experiencia">
+  <div class="section-head"><div class="section-index">03 / EXPERIENCE</div><div><h2>Experience shaped into a system.</h2><p class="section-intro">More than two decades in operations and leadership, combined with technical training, project management and human performance.</p></div></div>
+  <div class="timeline">
+    <article><div class="year">20+</div><h3>Years of experience</h3><p>Consolidated track record in hospitality, restaurants, banquets, events and customer service.</p></article>
+    <article><div class="year">5★</div><h3>Premium environments</h3><p>Experience in 5★ and 5★ Grand Luxury hotels with focus on standards, detail and execution.</p></article>
+    <article><div class="year">F&amp;B</div><h3>Operations &amp; events</h3><p>BEO, staffing, logistics, inventory, quality, KPI, coordination and minute-by-minute management.</p></article>
+    <article><div class="year">360º</div><h3>Cross-disciplinary profile</h3><p>Management, technology, projects, sports training, nutrition and continuous improvement.</p></article>
+  </div>
+  <div class="experience-profile-action"><a class="btn dark" href="experiencia-360.html">Explore 360º Profile <span aria-hidden="true">↗</span></a></div>
+</section>
+
+<section class="section shell reveal" id="metodo">
+  <div class="section-head"><div class="section-index">04 / METHOD</div><div><h2>Analyze. Plan. Execute. Measure. Improve.</h2><p class="section-intro">A methodology that is simple to explain and demanding to apply. The goal is not to add complexity, but to reduce it.</p></div></div>
+  <div class="method-grid">
+    <article class="step"><div class="n">01</div><b>ANALYZE</b><p>Understand objective, context, restrictions, risks and real needs.</p></article>
+    <article class="step"><div class="n">02</div><b>PLAN</b><p>Organize resources, responsible parties, dependencies, times and success criteria.</p></article>
+    <article class="step"><div class="n">03</div><b>EXECUTE</b><p>Coordinate, communicate and act without losing quality or ability to adapt.</p></article>
+    <article class="step"><div class="n">04</div><b>MEASURE</b><p>Observe indicators, experience, incidents, load and deviations.</p></article>
+    <article class="step"><div class="n">05</div><b>IMPROVE</b><p>Eliminate friction, standardize what works and prepare for the next cycle.</p></article>
+  </div>
+</section>
+
+<section class="section shell reveal" id="portfolios">
+  <div class="section-head"><div class="section-index">05 / PORTFOLIOS</div><div><h2>Human · Systems · Performance</h2><p class="section-intro">Three areas connected around the same management logic: people, processes and systems that work in the same direction.</p></div></div>
+  <div class="cluster-stage">
+    <div class="cluster-film">
+      <h3 class="visually-hidden">A single professional architecture.</h3>
+      <video class="cluster-video" id="cluster-video" width="1280" height="720" muted loop playsinline controls preload="metadata" aria-label="Professional architecture by Ramón A. Curbalán Vega: Hospitality, Technology and Performance orbit around people, processes and systems.">
+        <source src="assets/arquitectura-tres-planetas-cinematografico.mp4" type="video/mp4">
+        <p><a href="assets/arquitectura-tres-planetas-cinematografico.mp4">Watch the animation of professional architecture.</a></p>
+      </video>
+      <button class="cluster-toggle" id="cluster-toggle" type="button" aria-controls="cluster-video" hidden>Play animation</button>
+    </div>
+    <nav class="cluster-links" aria-label="Explore the three professional areas">
+      <a class="cluster-link host" href="https://raymonchu48.github.io/Portfolio_Hosteleria/"><b>Hospitality <span aria-hidden="true">↗</span></b><small>01 · OPERATIONS</small><p>Service, leadership, events, logistics, costs and experience.</p></a>
+      <a class="cluster-link tech" href="https://raymonchu48.github.io/Portfolio/"><b>Technology <span aria-hidden="true">↗</span></b><small>02 SYSTEMS</small><p>Development, networks, security, data, AI and automation.</p></a>
+      <a class="cluster-link sport" href="https://raymonchu48.github.io/Deportivo/"><b>Performance <span aria-hidden="true">↗</span></b><small>03 · HUMAN</small><p>Training, nutrition, habits and sustainable performance.</p></a>
+    </nav>
+  </div>
+</section>
+
+<section class="section shell reveal" id="proyectos">
+  <div class="section-head"><div class="section-index">06 / PROJECTS</div><div><h2>Ideas converted into products and systems.</h2><p class="section-intro">My own projects bring operations, design, technology and delivery together.</p></div></div>
+  <div class="project-grid">
+    <a class="project" href="https://www.chetesaifitness.com" target="_blank" rel="noopener"><div class="code">F+</div><div class="copy"><h3>Chetesaí Fitness+</h3><p>Private platform for training, nutrition, clients and habits.</p><span>OPEN PROJECT →</span></div></a>
+    <a class="project" href="farmagend.html"><div class="code">F24</div><div class="copy"><h3>Farmagend 24/7</h3><p>Hybrid physical-digital center with automation and intelligent dispensing.</p><span>OPEN PROJECT →</span></div></a>
+    <a class="project" href="catering-mallorca.html"><div class="code">CM</div><div class="copy"><h3>Catering Mallorca Premium</h3><p>Signature catering proposal for estates, villas, boutique weddings and corporate events in Mallorca.</p><span>OPEN PROJECT →</span></div></a>
+    <a class="project" href="https://raymonchu48.github.io/App_Inventarios/"><div class="code">BF</div><div class="copy"><h3>Banquete Fácil</h3><p>Operational support tool for inventories, material and event control.</p><span>OPEN PROJECT →</span></div></a>
+  </div>
+
+  <div class="case-section"><div class="case-heading"><div class="section-index">CASE STUDIES</div><h3>From analysis to a concrete proposal.</h3><p>Academic projects and technical studies that document my way of researching, planning and designing solutions.</p></div><div class="case-grid"><a class="case-card" href="proyectos/cala.html" style="--case-color:#126b88"><div class="case-cover"><img src="assets/proyectos/cala-portada.webp" alt="Cover of the Cala document · Usability and accessibility" loading="lazy"></div><div class="case-copy"><small>UX/UI · INCLUSIVE DESIGN</small><h3>Cala · Usability and accessibility</h3><p>Evaluation of a vacation rental platform: understanding the journey, price transparency and barriers to entry.</p><p class="case-status">Academic project prototype inspection</p><span>SEE CASE STUDY <b aria-hidden="true">↗</b></span></div></a><a class="case-card" href="proyectos/nexotech.html" style="--case-color:#126b88"><div class="case-cover"><img src="assets/proyectos/nexotech-portada.webp" alt="Cover of the NexoTech document · UX content strategy" loading="lazy"></div><div class="case-copy"><small>UX · INFORMATION ARCHITECTURE</small><h3>NexoTech · UX content strategy</h3><p>A proposal to improve findability, meaningful interaction and return visits across a technology content ecosystem.</p><p class="case-status">Academic case · fictitious organization</p><span>SEE CASE STUDY <b aria-hidden="true">↗</b></span></div></a><a class="case-card" href="proyectos/etoile-hiver.html" style="--case-color:#8a6d1b"><div class="case-cover"><img src="assets/proyectos/etoile-hiver-portada.webp" alt="Cover of the Étoile d’Hiver document · Hybrid event" loading="lazy"></div><div class="case-copy"><small>EVENTS · DIGITAL EXPERIENCE</small><h3>Étoile d’Hiver · Hybrid event</h3><p>Sensory launch of a perfume that connects an in-person gala, interactive streaming and boxes sent to the online public.</p><p class="case-status">Academic proposal · fictitious brand</p><span>SEE CASE STUDY <b aria-hidden="true">↗</b></span></div></a><a class="case-card" href="proyectos/flores-alba.html" style="--case-color:#8a6d1b"><div class="case-cover"><img src="assets/proyectos/flores-alba-portada.webp" alt="Cover of the Flores del Alba document · Inauguration" loading="lazy"></div><div class="case-copy"><small>EVENTS · OPERATIONS AND PROTOCOL</small><h3>Flores del Alba · Grand opening</h3><p>Comprehensive commercial opening plan with reception, protocol, cocktail, activities and business monitoring.</p><p class="case-status">Academic activity · proposed program</p><span>SEE CASE STUDY <b aria-hidden="true">↗</b></span></div></a><a class="case-card" href="proyectos/virtualizacion-farmaceutica.html" style="--case-color:#126b88"><div class="case-cover"><img src="assets/proyectos/virtualizacion-farmaceutica-portada.webp" alt="Cover of the Virtualization document · Pharmaceutical research" loading="lazy"></div><div class="case-copy"><small>SYSTEMS · INFRASTRUCTURE</small><h3>Virtualization · Pharmaceutical research</h3><p>Analysis of VMware ESXi and Hyper-V for scientific applications, Windows/Linux environments and service continuity.</p><p class="case-status">Technical study · analysis of alternatives</p><span>SEE CASE STUDY <b aria-hidden="true">↗</b></span></div></a><a class="case-card" href="proyectos/nutricion-habitos-saludables.html" style="--case-color:#4e6a57"><div class="case-cover"><img src="assets/proyectos/nutricion-portada.webp" alt="Cover of the work on nutritional intervention and change of healthy habits" loading="lazy"></div><div class="case-copy"><small>NUTRITION · HEALTHY HABITS</small><h3>Nutrition · Healthy habits</h3><p>Analysis of two cases with nutritional assessment, dietary proposals, nutritional education and a progressive physical activity plan.</p><p class="case-status">Academic work case analysis</p><span>SEE CASE STUDY <b aria-hidden="true">↗</b></span></div></a></div></div>
+
+  <div style="margin-top:70px">
+    <div class="section-index" style="margin-bottom:18px">CAPABILITIES</div>
+    <div class="skills">
+      <span>OPERATIONS</span><span>LEADERSHIP</span><span>F&amp;B</span><span>EVENT MANAGEMENT</span><span>PROJECT MANAGEMENT</span><span>AGILE/SCRUM</span><span>SYSTEMS</span><span>NETWORKS</span><span>CYBERSECURITY</span><span>AI</span><span>AUTOMATION</span><span>SPORT PERFORMANCE</span><span>NUTRITION</span>
+    </div>
+  </div>
+
+  <div class="docs">
+    <a class="doc" href="assets/Perfil_Profesional_Integral_Ramon_Curbalan.pdf" target="_blank" rel="noopener"><b>Integrated professional profile</b><span>Cross-sectional view of the three areas.</span></a>
+    <a class="doc" href="assets/Experiencia_360_Ramon_Curbalan.pdf" target="_blank" rel="noopener"><b>Experience 360°</b><span>Career experience and transferable skills.</span></a>
+    <a class="doc" href="metodologia.html"><b>Methodology</b><span>Work model applied to operations and systems.</span></a>
+    <a class="doc" href="contacto.html"><b>Contact</b><span>Direct channel for opportunities and projects.</span></a>
+  </div>
+</section>
+
+<section class="shell contact reveal">
+  <div><div class="section-index" style="color:#94a8b4;margin-bottom:18px">07 / CONTACT</div><h2>I build systems that align people, processes and technology.</h2><p>Hospitality · Technology · Human performance · Own projects.</p><a class="btn" href="contacto.html">Let's talk →</a></div>
+  <figure class="contact-visual"><img src="../assets/ramon-direccion.webp" width="1536" height="1024" loading="lazy" alt="Composition of Ramón A. Curbalán Vega with a tablet, along with diagrams of people, processes and technology connected towards a common goal"></figure>
+</section>
+</main>
+
+<footer class="shell"><span>© 2026 Ramón A. Curbalán Vega — Human · Systems · Performance</span><span>Hospitality · Technology · Performance</span></footer>
+
+<script>
+const menu=document.getElementById('menu'),nav=document.getElementById('nav');
+menu?.addEventListener('click',()=>nav.classList.toggle('open'));
+nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+// El barrido se inicia al entrar la sección en pantalla, no antes de llegar a ella.
+let pendingNavSection=null;
+nav?.querySelectorAll('a[href^="#"]').forEach(link=>{
+  link.addEventListener('click',event=>{
+    const id=link.getAttribute('href');
+    const target=id&&document.getElementById(id.slice(1));
+    if(!target)return;
+    event.preventDefault();
+    pendingNavSection=target;
+    target.classList.remove('nav-sweep');
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      target.scrollIntoView({behavior:'instant',block:'start'});
+    }else{
+      target.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+    history.replaceState(null,'',id);
+  });
+});
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  e.target.classList.add('on');
+  if(e.target===pendingNavSection){
+    e.target.classList.remove('nav-sweep');
+    void e.target.offsetWidth;
+    e.target.classList.add('nav-sweep');
+    pendingNavSection=null;
+  }
+}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const clusterVideo=document.getElementById('cluster-video');
+const clusterToggle=document.getElementById('cluster-toggle');
+const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+let clusterVisible=false;
+let clusterPausedByUser=reducedMotion.matches;
+clusterVideo.controls=false;
+clusterToggle.hidden=false;
+const updateClusterToggle=()=>{clusterToggle.textContent=clusterVideo.paused?'Play animation':'Pause animation';};
+const syncClusterPlayback=()=>{
+  if(clusterVisible&&!document.hidden&&!clusterPausedByUser){
+    clusterVideo.play().catch(updateClusterToggle);
+  }else{clusterVideo.pause();}
+};
+clusterVideo.addEventListener('play',updateClusterToggle);
+clusterVideo.addEventListener('pause',updateClusterToggle);
+clusterVideo.addEventListener('error',()=>{clusterToggle.hidden=true;});
+clusterToggle.addEventListener('click',()=>{
+  clusterPausedByUser=!clusterVideo.paused;
+  syncClusterPlayback();
+});
+const clusterObserver=new IntersectionObserver(entries=>{
+  clusterVisible=entries[0].isIntersecting;
+  syncClusterPlayback();
+},{threshold:.15});
+clusterObserver.observe(clusterVideo);
+document.addEventListener('visibilitychange',syncClusterPlayback);
+reducedMotion.addEventListener('change',event=>{
+  clusterPausedByUser=event.matches;
+  syncClusterPlayback();
+});
+</script>
+<nav class="language-switch" aria-label="Language"><a href="../index.html" lang="es" hreflang="es">ES</a><span aria-current="page">EN</span></nav></body>
+</html>
